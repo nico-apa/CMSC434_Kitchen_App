@@ -5,11 +5,36 @@ body {
     background-color: #FDD;
     display: flex;
     flex-direction: column;
+    width: 100%; /* Ensure the body takes up full width */
+    overflow-x: hidden; /* Prevent horizontal scroll */
   }
 
+  .content-wrapper {
+    width: 100%; 
+    max-width: 100%; /* Prevent any overflow */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    overflow-x: hidden;
+}
+
+/* For Text Responsiveness */
+p, h1, h2, h3, div {
+  overflow-wrap: break-word; 
+  word-wrap: break-word;
+}
+
+/* For Text Responsiveness */
+h1 {
+  font-size: 4vw; 
+}
+
+/* For Text Responsiveness */
+p {
+  font-size: 2.5vw;
+}
   
   .tabs {
     display: flex;
+    flex-wrap: wrap; 
     background-color: #E75480;
     position: fixed;
     bottom: 0;
@@ -18,8 +43,8 @@ body {
   
   .tab {
     display: flex;
-    flex: 1;
-    padding: 7px;
+    flex: 1 1 auto; 
+    padding: 1px;
     flex-direction: column;
     align-items: center;   
     justify-content: center; 
@@ -65,14 +90,14 @@ body {
   #todo_list_add {
     background-color: #000080;
     color: wheat;
-    height: 10px;
-    width: 20px;
+    height: 40px;
+    width: 50px;
     text-align: center;
   }
 
   #todo_input {
-    height: 10px;
-    width: 10px;
+    height: 40px;
+    width: 100px;
     
   }
   
@@ -85,14 +110,14 @@ body {
     color: purple;
     background-color: yellow;
   }
-  
+/*   
   .lr-position {
     position: fixed;
     right: 10px; 
     bottom: 50px; 
     text-align: right; 
     padding: 10px; 
-  }
+  } */
 
   .profile-image {
     display: block;
