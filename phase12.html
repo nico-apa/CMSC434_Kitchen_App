@@ -77,7 +77,13 @@
     <!-- Tab 4 - Profile -->
     <div id="profile" class="content">
       <h1>Profile</h1>
-      <p>Implement Me - Bardia</p>
+      <div class="image-container">
+        <img src="fridge.jpeg" alt="Fridge" class="profile-image" onclick="profileWarning()">
+        <p class="profile-caption">Fridgey D. Fridge</p>
+        <p id="profile-warning" class="profile-warning" style="display: none;"> 
+          <span class="exit-button" onclick="exitWarning()">x</span>
+          Warning: The fridge is locked!</p>
+      </div>
     </div>
 
     <!-- Tab 5 - Colors -->
