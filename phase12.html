@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tabs</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -14,6 +14,29 @@
     <!-- Tab 1 - Text -->
     <div id="text" class="content scroll-text active">
       <h1>Text</h1> 
+      <p>Filler Text </p>
+      <p>Filler Text</p>
+      <p>Filler Text </p>
+      <p>Filler Text</p>
+      <p>Filler Text </p>
+      <p>Filler Text</p>
+      <p>Filler Text </p>
+      <p>Filler Text</p>
+      <p>Filler Text </p>
+      <p>Filler Text</p>
+      <p>Filler Text </p>
+      <p>Filler Text</p>
+      <p>Filler Text </p>
+      <p>Filler Text</p>
+      <p>Filler Text </p>
+      <p>Filler Text</p>
+      <p>Filler Text </p>
+      <p>Filler Text</p>
+      <p>Filler Text </p>
+      <p>Filler Text</p>
+      <p>Filler Text</p>
+      <p>Filler Text </p>
+      <p>Filler Text</p>
       <p>Filler Text </p>
       <p>Filler Text</p>
       <p>Filler Text </p>
@@ -43,11 +66,13 @@
       <p id="output"></p>
     </div>
 
-    <!-- Tab 3 - To Do -->
-    <div id="todo" class="content">
-      <h1>To Do</h1>
-      <p>Implement Me - Nico </p>
-    </div>
+      <!-- Tab 3 - To Do -->
+      <div id="todo" class="content">
+        <h1>To Do</h1> <input placeholder="Add new entry..." id="todo_input"></input>
+        <button onclick="addToList()" id="todo_list_add">Add</button>
+        <div id="list_container">
+        </div>
+      </div>
 
     <!-- Tab 4 - Profile -->
     <div id="profile" class="content">
@@ -65,10 +90,10 @@
     <div id="colors" class="content">
       <h1>Colors</h1>
       <p>
-      <span style="color: yellow; background-color: black;">This text will have a         yellow background with black text</span>
+      <span style="color: yellow; background-color: black;">This text will have a black background with yellow text</span>
       </p>
       <p>
-      <span style="color: purple; background-color: yellow;">This text will have a         yellow background with black text</span>
+      <span style="color: purple; background-color: yellow;">This text will have a yellow background with purple text</span>
       </p>
     </div>
 
@@ -81,12 +106,18 @@
 
   <!-- Tabs navigation bar at the bottom -->
   <div class="tabs">
-    <div class="tab" onclick="showTab('text')">Text</div>
-    <div class="tab" onclick="showTab('choices')">Choices</div>
-    <div class="tab" onclick="showTab('todo')">To Do</div>
-    <div class="tab" onclick="showTab('profile')">Profile</div>
-    <div class="tab" onclick="showTab('colors')">Colors</div>
-    <div class="tab" onclick="showTab('lr')">LR</div>
+    <div class="tab" onclick="showTab('text')">
+      <img src="icons/TextIcon.svg" alt="Text Icon" > Text </div>
+    <div class="tab" onclick="showTab('choices')">
+      <img src="icons/ChoicesIcon.svg" alt="Text Icon" > Choices</div>
+    <div class="tab" onclick="showTab('todo')">
+      <img src="icons/TodoIcon.svg" alt="Text Icon" > To Do</div>
+    <div class="tab" onclick="showTab('profile')">
+      <img src="icons/UserIcon.svg" alt="Text Icon" > Profile</div>
+    <div class="tab" onclick="showTab('colors')">
+      <img src="icons/ColorLogo.svg" alt="Text Icon" > Colors</div>
+    <div class="tab" onclick="showTab('lr')">
+      <img src="icons/ArrowLogo.svg" alt="Text Icon" > LR</div>
   </div>
 
   <script src="script.js"></script>

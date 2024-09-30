@@ -40,7 +40,7 @@ function showTab(tabName) {
 
         const deleteItem = document.createElement("button");
         deleteItem.textContent = "Delete";
-        deleteItem.style.marginLeft = "10rem"; 
+        deleteItem.style.marginLeft = "10px"; 
         deleteItem.addEventListener("click", function() {
             divElm.remove(); 
         });
