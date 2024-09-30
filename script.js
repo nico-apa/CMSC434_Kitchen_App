@@ -1,3 +1,5 @@
+
+/* Function to switch between tabs */
 function showTab(tabName) {
     // Hide all content sections by removing the 'active' class
     document.querySelectorAll('.content').forEach(content => content.classList.remove('active'));

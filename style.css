@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; 
+    padding: 0;
+    background-color: #FDD;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .content-wrapper {
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+  
+  .tabs {
+    display: flex;
+    background-color: #E75480;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .tab {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+    background-color: #000080;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .tab:hover {
+    background-color: #0000ff;
+  }
+  
+  .content {
+    display: none;
+    padding: 20px;
+  }
+  
+  .active {
+    display: block;
+  }
+  
+  .scroll-text {
+    height: 400px;
+    overflow-y: scroll;
+  }
+  
+  .choices {
+    padding: 20px;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px;
+  }
+  
+  /*CSS for Colors Tab*/
+  .yellow-on-black-text {
+    color: yellow;
+    background-color: black;
+  }
+  
+  .purple-on-yellow-text {
+    color: purple;
+    background-color: yellow;
+  }
+  
+  /*CSS for Lower Right Tab*/
+  .lr-position {
+    position: fixed;
+    right: 50px; 
+    bottom: 50px; 
+    text-align: right; 
+    padding: 10px; 
+  }
