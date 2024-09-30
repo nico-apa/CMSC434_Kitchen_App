@@ -5,14 +5,14 @@ body {
     background-color: #FDD;
     display: flex;
     flex-direction: column;
-    width: 100%; /* Ensure the body takes up full width */
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    width: 100%; 
+    overflow-x: hidden; 
   }
 
   .content-wrapper {
     width: 100%; 
-    max-width: 100%; /* Prevent any overflow */
-    box-sizing: border-box; /* Include padding in the width calculation */
+    max-width: 100%; 
+    box-sizing: border-box; 
     overflow-x: hidden;
 }
 
@@ -110,14 +110,14 @@ p {
     color: purple;
     background-color: yellow;
   }
-/*   
+  
   .lr-position {
     position: fixed;
     right: 10px; 
     bottom: 50px; 
     text-align: right; 
     padding: 10px; 
-  } */
+  }
 
   .profile-image {
     display: block;
