@@ -16,5 +16,14 @@ function showTab(tabName) {
     document.getElementById('output').textContent = `You chose Hat color #1: ${hat1 || 'None'}, Hat color #2: ${hat2}`;
   }
   
+  function profileWarning() {
+    const warning = document.getElementById('profile-warning');
+    warning.style.display = 'block';
+  }
+  
+  function exitWarning() {
+    const warning = document.getElementById('profile-warning');
+    warning.style.display = 'none';
+}
   // By default "Text" tab when the page loads
   showTab('text');

@@ -76,3 +76,35 @@ body {
     text-align: right; 
     padding: 10px; 
   }
+
+  .profile-image {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .profile-caption {
+    text-align: center;
+    margin-top: 5px;
+    font-weight: bold;
+  }
+
+  .profile-warning {
+    background-color: #8B0000;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    position: relative; 
+  }
+
+  .exit-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+  }
