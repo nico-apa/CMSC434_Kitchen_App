@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tabs</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -66,11 +66,13 @@
       <p id="output"></p>
     </div>
 
-    <!-- Tab 3 - To Do -->
-    <div id="todo" class="content">
-      <h1>To Do</h1>
-      <p>Implement Me - Nico </p>
-    </div>
+      <!-- Tab 3 - To Do -->
+      <div id="todo" class="content">
+        <h1>To Do</h1> <input placeholder="Add new entry..." id="todo_input"></input>
+        <button onclick="addToList()" id="todo_list_add">Add</button>
+        <div id="list_container">
+        </div>
+      </div>
 
     <!-- Tab 4 - Profile -->
     <div id="profile" class="content">
@@ -99,17 +101,17 @@
   <!-- Tabs navigation bar at the bottom -->
   <div class="tabs">
     <div class="tab" onclick="showTab('text')">
-      <img src="icons/TextIcon.svg" alt="Text Icon" style="width: 2rem; height: 2rem;"> Text </div>
+      <img src="icons/TextIcon.svg" alt="Text Icon" > Text </div>
     <div class="tab" onclick="showTab('choices')">
-      <img src="icons/ChoicesIcon.svg" alt="Text Icon" style="width: 2rem; height: 2rem;"> Choices</div>
+      <img src="icons/ChoicesIcon.svg" alt="Text Icon" > Choices</div>
     <div class="tab" onclick="showTab('todo')">
-      <img src="icons/TodoIcon.svg" alt="Text Icon" style="width: 2rem; height: 2rem;"> To Do</div>
+      <img src="icons/TodoIcon.svg" alt="Text Icon" > To Do</div>
     <div class="tab" onclick="showTab('profile')">
-      <img src="icons/UserIcon.svg" alt="Text Icon" style="width: 2rem; height: 2rem;"> Profile</div>
+      <img src="icons/UserIcon.svg" alt="Text Icon" > Profile</div>
     <div class="tab" onclick="showTab('colors')">
-      <img src="icons/ColorLogo.svg" alt="Text Icon" style="width: 2rem; height: 2rem;"> Colors</div>
+      <img src="icons/ColorLogo.svg" alt="Text Icon" > Colors</div>
     <div class="tab" onclick="showTab('lr')">
-      <img src="icons/ArrowLogo.svg" alt="Text Icon" style="width: 2rem; height: 2rem;"> LR</div>
+      <img src="icons/ArrowLogo.svg" alt="Text Icon" > LR</div>
   </div>
 
   <script src="script.js"></script>

@@ -5,13 +5,8 @@ body {
     background-color: #FDD;
     display: flex;
     flex-direction: column;
-    height: 100vh;
   }
-  
-  .content-wrapper {
-    flex-grow: 1;
-    overflow-y: auto;
-  }
+
   
   .tabs {
     display: flex;
@@ -35,8 +30,8 @@ body {
   }
 
   .tab img {
-    width: 1rem;  
-    height: 1rem;
+    width: 10px;  
+    height: 10px;
     margin-bottom: 2px;  
   }
   
@@ -66,8 +61,21 @@ body {
     margin-top: 20px;
     padding: 10px;
   }
+
+  #todo_list_add {
+    background-color: #000080;
+    color: wheat;
+    height: 10px;
+    width: 20px;
+    text-align: center;
+  }
+
+  #todo_input {
+    height: 10px;
+    width: 10px;
+    
+  }
   
-  /*CSS for Colors Tab*/
   .yellow-on-black-text {
     color: yellow;
     background-color: black;
@@ -78,11 +86,10 @@ body {
     background-color: yellow;
   }
   
-  /*CSS for Lower Right Tab*/
   .lr-position {
     position: fixed;
     right: 10px; 
     bottom: 50px; 
-    text-align: right; 
-    padding: 50px; 
-  }
+    text-align: right;
+    padding: 10px; /* Reduce padding */
+}
