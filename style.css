@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@1,400&display=swap');
+
+body {
+    font-family: 'Libre Baskerville', serif;
+    background-color: #F3F8F2; /* Primary 1 background */
+    margin: 20px;
+}
+
+/* Title Styling */
+h1 {
+    font-size: 35pt;
+    font-style: italic;
+    color: #0B0014; /* Primary 2 color */
+}
+
+/* Headings Styling */
+h2, h3, h4 {
+    font-size: 24pt;
+    font-style: italic;
+    color: #0B0014; /* Primary 2 color */
+}
+
+/* Text Styling */
+p, label, input, select {
+    font-size: 15pt;
+    font-family: 'Libre Baskerville', serif;
+    color: #0B0014; /* Primary 2 for text color */
+}
+
+/* Button Styling for Add Buttons */
+button {
+    padding: 10px 15px;
+    background-color: #19647E; /* Primary 3 color for Add buttons */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 15pt;
+}
+
+button:hover {
+    background-color: #0B0014; /* Primary 2 hover */
+}
+
+/* Remove button */
+.remove-btn {
+    padding: 8px 12px;
+    background-color: #C84630; /* Secondary 1 color for Remove button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    justify-self: end;
+    align-self: center;
+    font-size: 15pt;
+}
+
+.remove-btn:hover {
+    background-color: #0B0014; /* Primary 2 hover for Remove button */
+}
+
+/* Container background */
+.user {
+    background-color: #F3F8F2; /* Primary 1 color for user background */
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #0B0014; /* Primary 2 border */
+}
+
+.grocery-item-grid, .shopping-item-grid {
+    background-color: #F3F8F2; /* Primary 1 color for item lists */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #0B0014; /* Primary 2 border */
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roommates Grocery Tracker and Shopping Lists</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Roommates Grocery Tracker and Shopping Lists</h1>
+        <div id="users-section">
+            <h2>Users</h2>
+
+            <!-- Roommate 1: Editable Section -->
+            <div class="user">
+                <h3>Roommate 1: <input type="text" placeholder="Enter User Name"></h3>
+                
+                <!-- Grocery Item Section for Roommate 1 -->
+                <div class="grocery-item-grid-container">
+                    <div class="grocery-item-grid">
+                        <div class="grocery-item-group">
+                            <label for="item-name">Item Name</label>
+                            <input type="text" id="item-name" placeholder="Enter Item Name">
+                        </div>
+
+                        <div class="grocery-item-group">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" placeholder="Enter Location">
+                        </div>
+
+                        <div class="grocery-item-group">
+                            <label for="expiration-date">Expiration Date</label>
+                            <input type="date" id="expiration-date">
+                        </div>
+
+                        <div class="grocery-item-group">
+                            <label for="communal">Communal</label>
+                            <select id="communal">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <button class="remove-btn">Remove Item</button>
+                    </div>
+                </div>
+
+                <button>Add Grocery Item</button>
+
+                <!-- Personal Shopping List -->
+                <h4>Personal Shopping List</h4>
+                <div class="shopping-item-grid-container">
+                    <div class="shopping-item-grid">
+                        <div class="shopping-item-group">
+                            <label for="personal-item">Item</label>
+                            <input type="text" id="personal-item" placeholder="Enter Item">
+                        </div>
+                        <div class="shopping-item-group">
+                            <label for="personal-price">Price</label>
+                            <input type="text" id="personal-price" placeholder="Enter Price">
+                        </div>
+                        <button class="remove-btn">Remove Item</button>
+                    </div>
+                </div>
+                <button>Add Item</button>
+                <p><strong>Total:</strong> $0.00</p>
+            </div>
+
+            <!-- Roommate 2: Raymond Reddington (Read-Only) -->
+            <div class="user">
+                <h3>Roommate 2: Raymond Reddington</h3>
+                
+                <!-- Read-only Grocery Item Section for Raymond Reddington -->
+                <div class="grocery-item-grid-container">
+                    <div class="grocery-item-grid">
+                        <div class="grocery-item-group">
+                            <label>Item Name</label>
+                            <input type="text" value="Apples" readonly>
+                        </div>
+
+                        <div class="grocery-item-group">
+                            <label>Location</label>
+                            <input type="text" value="Fridge" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Communal Shopping List -->
+            <div class="communal-list">
+                <h3>Communal Shopping List</h3>
+                <div class="shopping-item-grid-container">
+                    <div class="shopping-item-grid">
+                        <div class="shopping-item-group">
+                            <label for="communal-item">Item</label>
+                            <input type="text" id="communal-item" placeholder="Enter Item">
+                        </div>
+                        <div class="shopping-item-group">
+                            <label for="communal-price">Price</label>
+                            <input type="text" id="communal-price" placeholder="Enter Price">
+                        </div>
+                        <button class="remove-btn">Remove Item</button>
+                    </div>
+                </div>
+                <button>Add Communal Item</button>
+                <p><strong>Communal Total:</strong> $0.00</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
