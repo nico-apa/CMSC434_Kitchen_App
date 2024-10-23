@@ -109,7 +109,7 @@ const FoodCategory = Object.freeze({
   }
   
   /* Below is where will create the main instance of a kitchen to hardcode data. Add any data you need for 
-     the model down here. I provided a basic start to help but am planning on adding a lot more later. */
+     the model down here. I provided a start to help but am planning on adding a lot more later. */
   
   const user1 = new User("Jake", [], [FoodCategory.MEAT, FoodCategory.FISH, FoodCategory.EGGS]);
   const user2 = new User("Susan", [], [FoodCategory.DAIRY]);
