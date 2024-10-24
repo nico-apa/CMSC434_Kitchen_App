@@ -1,0 +1,106 @@
+/* 
+Imports custom font to our project 
+to now be available to use 
+*/
+@font-face{
+    font-family: 'TripSans';
+    src: url(trip-sans-variable.ttf) format('truetype');
+}
+
+/* Applies font to entire body */
+body {
+    font-family: 'TripSans', sans-serif;
+}
+
+/* Style for header background */
+.header {
+    text-align: center;
+    font-size: 2rem;
+    background-color: #3F612D;
+    padding: 2rem;
+    color: #FFEEE2;
+}
+
+/* Style for login and logout buttons */
+.log_buttons {
+    font-size: 1rem;
+    font-family: 'TripSans';
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.login {
+    background-color: #8bb174;
+}
+
+.logout {
+    background-color: #db5a42;
+}
+
+/* Groups div columns in rows */
+.row_of_views::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+/* Organizes divs into columns */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 15px;
+  }
+  
+/* Renders profile picture to appear circular */
+.user_profile_picture {
+    display: inline-block;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.one {
+    background-image: url(fat_dawg.jpg);
+}
+
+/* Aligns scroll buttons to be side by side */
+.scroll_buttons {
+    display: flex;
+    justify-content: center; /* Centers the buttons horizontally */
+    align-items: center; /* Aligns the buttons vertically in the middle */
+    gap: 10px; /* Adds space between buttons */
+}
+
+/*  */
+.scroll_add_remove {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #f8f4fc;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    transition: 0.4s ease;
+}
+
+.add {
+    background-color: #8bb174;
+}
+
+.remove {
+    background-color: #db5a42;
+}
+
+.scroll_add_remove:hover {
+    box-shadow: 0rem 0rem 1.25rem 1.25rem rgba(black, black, black, black);
+    background-color: lightgray;
+}
+

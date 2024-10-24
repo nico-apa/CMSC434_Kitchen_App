@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link rel="stylesheet" href="user_profile_style.css">
+</head>
+
+<body>
+
+<div class="header">
+  <h1>Hello *Insert username here*!</h1> <!-- use js here to store username -->
+  <Button class="log_buttons login">Login</Button> <button class="log_buttons logout">Logout</button>
+</div>
+
+<!-- Organizes user profile page by creating div sections -->
+<div class="row_of_views">
+  <!-- Column to center settings -->
+  <div class="column">
+  </div>
+
+  <!-- Column for user profile settings and customization -->
+  <div class="column">
+    <h1>Settings</h1>
+
+    <h1>Username here</h1>
+    <div class="user_profile_picture">
+      <div class="user_profile_picture one"></div>
+    </div>
+
+    <!-- Group off buttons to scroll, add, and remove user in fridge and -->
+    <div class="scroll_buttons">
+      <div class="scroll_add_remove left">❮</div>
+      <div class="scroll_add_remove add">+</div>
+      <div class="scroll_add_remove remove">-</div>
+      <div class="scroll_add_remove right">❯</div>
+    </div>
+
+    <div class="profile_settings">
+      <label>Name:</label> <input id="name_input"> 
+      <label>Biography:</label> <textarea id="Biography_input">Hey I'm (use js here to insert username)!</textarea> 
+      <label>Food Restrictions/Allergies:</label> <input id="restrictions_input">  <!-- Use multiselect here/dropdown hybrid -->
+      <label>Diet:</label> <input id="diet_input"> 
+      <label>Date of Birth:</label> <input id="dob_input">
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
