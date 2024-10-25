@@ -60,8 +60,22 @@ function addToInventoryStorage(item) {
 
 
 
+// CSS 
+
+.shopping-list-container {
+  max-width: 37.5rem; /* Controls the overall width of the container */
+  margin: 0 auto; /* Centers the container on the page */
+  background-color: white; /* Sets a clean white background for contrast */
+  padding: 1.25rem; /* Adds space between the content and the container border */
+  box-shadow: 0rem 0rem 0.625rem rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to give depth */
+}
 
 
+ .form-container {
+  display: flex; /* Aligns the form elements in a column */
+  flex-direction: column; /* Stacks the labels, inputs, and buttons vertically */
+  margin-bottom: 1.25rem; /* Adds space below the form */
+}
 
 
 
