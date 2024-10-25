@@ -1,4 +1,96 @@
 
+class Item {
+  /**
+   * Creates a new item.
+   * @param {string} name - The name of the item.
+   * @param {string} owner - Indicates if the item belongs to the 'personal' or 'communal' list.
+   * @param {string} type - The storage type for the item ('fridge', 'freezer', or 'pantry').
+   */
+  constructor(name, owner, type) {
+    this.name = name;
+    this.owner = owner; 
+    this.type = type;    
+  }
+}
+
+
+
+// User class stores items in fridge, freezer, or pantry
+class User {
+  /**
+   * Creates a new user with empty storage arrays.
+   * @param {string} name - The name of the user.
+   */
+  constructor(name) {
+    this.name = name;
+    this.fridge = [];
+    this.freezer = [];
+    this.pantry = [];
+  }
+
+  // Add item to fridge
+  addToFridge(item) {
+    this.fridge.push(item);
+  }
+
+  // Add item to freezer
+  addToFreezer(item) {
+    this.freezer.push(item);
+  }
+
+  // Add item to pantry
+  addToPantry(item) {
+    this.pantry.push(item);
+  }
+}
+
+/**
+ * Adds an item to the user's storage (fridge, freezer, or pantry) based on the item's type.
+ * @param {Item} item - The item to be added to the storage.
+ */
+function addToInventoryStorage(item) {
+  if (item.type === 'fridge') {
+    currentUser.addToFridge(item);
+  } else if (item.type === 'freezer') {
+    currentUser.addToFreezer(item);
+  } else if (item.type === 'pantry') {
+    currentUser.addToPantry(item);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* FoodCategory is effectively an enum that represent the cases for different Food Categories. The fridge, 
 freezer, and pantry will only have certain food categories in each. */
 // Fridge will have: Eggs, Condiments, Meat, Fish, Dairy, Vegetables, Fruits, Alcohols, Beverages, Leftovers, Misc
@@ -123,4 +215,9 @@ const FoodCategory = Object.freeze({
   
   kitchen.fridge.addItem(foodItem1);
   kitchen.freezer.addItem(foodItem2);
+
+
+
+
+
   
