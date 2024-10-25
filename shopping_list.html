@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shopping-list-container">
+    <h1>Shopping List Manager</h1>
+    
+    <div class="form-container">
+      <label for="list-type">Select List:</label>
+      <select id="list-type">
+        <option value="personal">Personal</option>
+        <option value="communal">Communal</option>
+      </select>
+
+      <label for="item-name">Item Name:</label>
+      <input type="text" id="item-name" placeholder="Enter item name">
+
+      <label for="storage-type">Storage Location:</label>
+      <select id="storage-type">
+        <option value="fridge">Fridge</option>
+        <option value="freezer">Freezer</option>
+        <option value="pantry">Pantry</option>
+      </select>
+      
+      <button onclick="addItem()">Add Item</button>
+    </div>
+
+    <div class="list-container">
+      <h2>Personal List</h2>
+      <ul id="personal-list"></ul>
+      <p>Total: <span id="personal-total">0</span> items</p>
+    </div>
+
+    <div class="list-container">
+      <h2>Communal List</h2>
+      <ul id="communal-list"></ul>
+      <p>Total: <span id="communal-total">0</span> items</p>
+    </div>
+
+    <button onclick="addToInventory()">Add to Inventory</button>
+
+    <div class="template-actions">
+      <button onclick="saveAsTemplate()">Save List as Template</button>
+      
+      <div class="load-template-container">
+        <label for="template-select">Load Template:</label>
+        <select id="template-select">
+          <option value="">-- Select Template --</option>
+        </select>
+        <button onclick="loadTemplate()">Load Template</button>
+      </div>
+
+      <button id="delete-template-button" onclick="deleteTemplate()">Delete Template</button>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
