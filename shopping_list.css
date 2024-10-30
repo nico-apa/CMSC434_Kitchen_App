@@ -1,0 +1,250 @@
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Libre Baskerville', serif;
+  background-color: #F7F4F3;
+  color: #231F20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.shopping-list-container {
+  width: 80%;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #FFEEE2;
+  border-radius: 15px;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.dropdown h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: italic;
+  color: #231F20;
+  margin: 0;
+}
+
+.expand-icon {
+  font-size: 1.5rem;
+  color: #DB5A42;
+}
+
+.add-item-section {
+  background-color: #231F20;
+  padding: 10px;
+  border-radius: 10px;
+  color: #FFEEE2;
+}
+
+.add-item-section h2 {
+  color: #FFEEE2;
+}
+
+.add-item-section .dropdown-content {
+  background-color: #F7F4F3;
+  color: #231F20;
+  border: 2px solid #231F20;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.personal-list-section {
+  background-color: #8BB174;
+  padding: 10px;
+  border-radius: 10px;
+  color: #FFEEE2;
+}
+
+.communal-list-section {
+  background-color: #0077A0;
+  padding: 10px;
+  border-radius: 10px;
+  color: #FFEEE2;
+}
+
+.dropdown-content {
+  display: none;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  width: 80px;
+  font-weight: bold;
+  font-style: italic;
+  color: #231F20;
+}
+
+.option-button,
+.add-item-button,
+.action-button,
+.remove-button {
+  background-color: #231F20;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.option-button.selected,
+.action-button.selected,
+.remove-button.selected {
+  background-color: #DB5A42;
+}
+
+.option-button:hover,
+.add-item-button:hover,
+.action-button:hover,
+.remove-button:hover {
+  background-color: #DB5A42;
+}
+
+#personal-list li, #communal-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 5px;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #ddd; 
+  gap: 10px; 
+}
+
+.item-checkbox {
+  margin-right: 10px;
+}
+
+.item-name {
+  flex: 2;
+  font-weight: bold;
+  color: #231F20;
+  margin-right: 15px;
+}
+
+.item-quantity,
+.item-type {
+  flex: 1;
+  color: #555;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  background-color: #CDDDDD; 
+  border-radius: 5px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.remove-button {
+  background-color: #DB5A42;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+  background-color: #C14D36;
+}
+
+.quantity-group {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #DB5A42;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quantity-button:hover {
+  background-color: #C14D36;
+}
+
+.quantity-display {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #231F20;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #FFEEE2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-field {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: 1px solid #231F20;
+  width: 100%;
+}
+
+.custom-button {
+  background-color: #231F20; 
+  color: #FFF;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.custom-button.selected {
+  background-color: #DB5A42; 
+}
+
+.load-templates-section {
+  background-color: #FFC107; 
+  padding: 10px;
+  border-radius: 10px;
+  color: #231F20;
+}
