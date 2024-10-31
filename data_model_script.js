@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 class Item {
   /**
@@ -105,11 +106,10 @@ function addToInventoryStorage(item) {
 
 
 
+=======
+>>>>>>> b748943 (Current Data Model for Tyler)
 /* FoodCategory is effectively an enum that represent the cases for different Food Categories. The fridge, 
 freezer, and pantry will only have certain food categories in each. */
-// Fridge will have: Eggs, Condiments, Meat, Fish, Dairy, Vegetables, Fruits, Alcohols, Beverages, Leftovers, Misc
-// Freezer will have: Meat, Fish, Dairy, Vegetables, Fruits, Alcohols, Misc
-// Pantry will have: Baking Goods, Snacks, Cereals, Teas, Coffee, Canned Goods, Misc
 const FoodCategory = Object.freeze({
     EGGS: "Eggs",
     CONDIMENTS: "Condiments",
@@ -131,88 +131,73 @@ const FoodCategory = Object.freeze({
     FIXME: "",
   });
 
-  /* StorageType is effectivly an enum that represents the different cases for storage. Food can be stored
-     Either in the Fridge, Freezer, or Pantry. Since fridge, freezer, and pantry should all just be a different 
-     instantation of the same class this enum will allow us to decicde where the food items should go. It will be
-     used in the FoodItem class below. */
-  const StorageType = Object.freeze({
+/* Food Categories for each Storage Container */
+const fridgeCategories = [
+    FoodCategory.EGGS, FoodCategory.CONDIMENTS, FoodCategory.LEFTOVERS, FoodCategory.MEAT,
+    FoodCategory.BEVERAGES, FoodCategory.FISH, FoodCategory.DAIRY, FoodCategory.VEGETABLES,
+    FoodCategory.FRUITS, FoodCategory.ALCOHOL, FoodCategory.MISC
+];
+const pantryCategories = [
+    FoodCategory.BAKINGGOODS, FoodCategory.SNACKS, FoodCategory.CEREALS, FoodCategory.TEAS,
+    FoodCategory.COFFEE, FoodCategory.CANNEDGOODS, FoodCategory.MISC
+];
+const freezerCategories = [
+    FoodCategory.MEAT, FoodCategory.FISH, FoodCategory.VEGETABLES, FoodCategory.FRUITS,
+    FoodCategory.ALCOHOL, FoodCategory.MISC
+];
+
+/* StorageType is effectively an enum that represents the different cases for storage. */
+const StorageType = Object.freeze({
     FRIDGE: "Fridge",
     FREEZER: "Freezer",
     PANTRY: "Pantry",
-  });
-  
-  /* FoodItem is the class that represents an item of food that will go in the Fridge, Freezer, or Pantry. 
-     Name should be a string. Owner should be a User class. Category should be a FoodCategory const.
-     Perishavle should be a boolean. Expiration Date should be an optional string that is filled in only
-     if the food item is perishable. Type should be a StorageType const representing where the item should
-     be stored. When filtering items for specific users we can look through the FoodItem.owner to make an 
-     temp array to display the results. */
-  class FoodItem {
+});
+
+class FoodItem {
     constructor(name, owner, category, perishable, expirationDate, amount, type) {
-      this.name = name;
-      this.owner = owner;
-      this.category = category;
-      this.perishable = perishable;
-      this.expirationDate = expirationDate;
-      this.amount = amount;
-      this.type = type;
+        this.name = name;
+        this.owner = owner;
+        this.category = category;
+        this.perishable = perishable;
+        this.expirationDate = expirationDate;
+        this.amount = amount;
+        this.type = type;
     }
-  }
-  
-  /* User is the class that represents one of the users of the kitchen. Each user will have a name (String),
-     an array of favorite recipes (Recipe), an array of dietary restrictions (FoodCategory). */
-  class User {
+}
+
+class User {
     constructor(name, favoriteRecipes, dietaryRestrictions) {
-      this.name = name;
-      this.favoriteRecipes = favoriteRecipes;
-      this.dietaryRestrictions = dietaryRestrictions;
+        this.name = name;
+        this.favoriteRecipes = favoriteRecipes;
+        this.dietaryRestrictions = dietaryRestrictions;
     }
-  }
-  
-  /* Recipe is the class that represents a recipe for the food suggestions page. I am not sure what Bardia 
-      plans to have here so I left it mostly blank except an string name variable. */
-  class Recipe {
-    constructor(name, ingredients) {
-      this.name = name;
-      // BARDIA IMPLEMENT ME
-    }
-  }
-  
-  /* Storage is the class that represents the Fridge, Freezer, Pantry for a Kitchen. In each of the
-     storage types there will be a name (String), type (StorageType), and array of food items (FoodItem). */
-  /* Side Note: I am not sure if there should be a seperate class for a Fridge, Freezer, and Pantry. While
-     making the Data Model it didnt seem like they had any different functions so for now they can be
-     considered the same "type".  */
-  class Storage {
+}
+
+class Storage {
     constructor(name, type, items = []) {
-      this.name = name;
-      this.type = type;
-      this.items = items;
+        this.name = name;
+        this.type = type;
+        this.items = items;
     }
-    
-    /* Multiple functions need to be added to this class, for right now I only have add but remove, edit and 
-       much more need to be added. */
+
     addItem(item) {
-      this.items.push(item);
+        this.items.push(item);
     }
-  }
-  
-  /* Kitchen is the class that represents the overarching kitchen meaning it will store the users and kitchen
-     appliance information. There should only be one instance of this class for the app (as of now) and it 
-     will be used as the source of truth to populate UI elements. The class has a variable name (String), 
-     array of users (User), a fridge variable (Storage), a freezer variable (Storage), a pantry variable (Storage). */
-  class Kitchen {
+}
+
+class Kitchen {
     constructor(name, users = [], fridge = new Storage("Fridge"), freezer = new Storage("Freezer"), pantry = new Storage("Pantry")) {
-      this.name = name;
-      this.users = users;
-      this.fridge = fridge;
-      this.freezer = freezer;
-      this.pantry = pantry;
+        this.name = name;
+        this.users = users;
+        this.fridge = fridge;
+        this.freezer = freezer;
+        this.pantry = pantry;
     }
-    
+
     addUser(user) {
-      this.users.push(user);
+        this.users.push(user);
     }
+<<<<<<< HEAD
   }
   
   /* Below is where will create the main instance of a kitchen to hardcode data. Add any data you need for 
@@ -236,3 +221,34 @@ const FoodCategory = Object.freeze({
 
 
   
+=======
+}
+
+// Hardcoded users and food items
+const user1 = new User("You", [], [FoodCategory.MEAT, FoodCategory.FISH, FoodCategory.EGGS]);
+const user2 = new User("Susan", [], [FoodCategory.DAIRY]);
+const user3 = new User("Jake", [], [FoodCategory.FRUITS]);
+const communalUser = new User("Communal", [], []); // Communal items
+
+const foodItem1 = new FoodItem("Milk", user1, FoodCategory.DAIRY, true, "2024-10-25", 1, StorageType.FRIDGE);
+const foodItem2 = new FoodItem("Chicken", user2, FoodCategory.MEAT, true, "2024-12-05", 2, StorageType.FREEZER);
+const foodItem3 = new FoodItem("Yogurt", user1, FoodCategory.DAIRY, true, "2024-10-30", 3, StorageType.FRIDGE);
+const foodItem4 = new FoodItem("Apple", user2, FoodCategory.FRUITS, false, null, 5, StorageType.FRIDGE);
+const foodItem5 = new FoodItem("Rice", communalUser, FoodCategory.MISC, false, null, 1, StorageType.PANTRY);
+const foodItem6 = new FoodItem("Frozen Peas", user3, FoodCategory.VEGETABLES, true, "2024-11-01", 1, StorageType.FREEZER);
+const foodItem7 = new FoodItem("Soda", communalUser, FoodCategory.BEVERAGES, false, null, 12, StorageType.FRIDGE);
+
+const kitchen = new Kitchen("Main Kitchen");
+kitchen.addUser(communalUser);
+kitchen.addUser(user1);
+kitchen.addUser(user2);
+kitchen.addUser(user3);
+
+kitchen.fridge.addItem(foodItem1);
+kitchen.fridge.addItem(foodItem3);
+kitchen.fridge.addItem(foodItem7);
+kitchen.fridge.addItem(foodItem4);
+kitchen.pantry.addItem(foodItem5);
+kitchen.freezer.addItem(foodItem2);
+kitchen.freezer.addItem(foodItem6);
+>>>>>>> b748943 (Current Data Model for Tyler)
