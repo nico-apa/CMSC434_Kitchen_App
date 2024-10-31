@@ -128,6 +128,7 @@ const FoodCategory = Object.freeze({
     COFFEE: "Coffee",
     CANNEDGOODS: "Canned Goods",
     MISC: "Misc",
+    FIXME: "",
   });
 
   /* StorageType is effectivly an enum that represents the different cases for storage. Food can be stored
