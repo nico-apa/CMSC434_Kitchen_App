@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping List Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shopping-list-container" id="shopping-list-container">
+    <div class="dropdown add-item-section" onclick="toggleDropdown('add-item-dropdown')">
+      <h2>Add an Item</h2>
+      <span class="expand-icon">+</span>
+    </div>
+    <div class="dropdown-content" id="add-item-dropdown">
+      <div class="form-group">
+        <label for="item-name">Item:</label>
+        <input type="text" id="item-name" class="input-field" placeholder="Add Item Name">
+      </div>
+      <div class="form-group quantity-group">
+        <label>Quantity:</label>
+        <div class="quantity-controls">
+          <button type="button" onclick="adjustQuantity(-1)" class="quantity-button">−</button>
+          <span id="item-quantity" class="quantity-display">1</span>
+          <button type="button" onclick="adjustQuantity(1)" class="quantity-button">+</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>List:</label>
+        <div id="list-type-buttons">
+          <button class="custom-button" data-type="personal">Personal</button>
+          <button class="custom-button" data-type="communal">Communal</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Location:</label>
+        <div id="storage-type-buttons">
+          <button class="custom-button" data-type="fridge">Fridge</button>
+          <button class="custom-button" data-type="pantry">Pantry</button>
+          <button class="custom-button" data-type="freezer">Freezer</button>
+        </div>
+      </div>
+      <button class="add-item-button custom-button" onclick="addItem()">Add Item</button>
+    </div>
+    <div class="dropdown personal-list-section" onclick="toggleDropdown('personal-list-dropdown')">
+      <h2>Personal List</h2>
+      <span class="expand-icon">+</span>
+    </div>
+    <div class="dropdown-content" id="personal-list-dropdown">
+      <ul id="personal-list"></ul>
+      <p>Total: <span id="personal-total">0</span> items</p>
+      <button class="action-button" onclick="selectAllItems('personal')">Select All</button>
+      <button class="action-button" onclick="addToInventory('personal')">Add to Inventory</button>
+      <button class="action-button" onclick="saveAsTemplate('personal')">Save Personal Template</button>
+    </div>
+    <div class="dropdown communal-list-section" onclick="toggleDropdown('communal-list-dropdown')">
+      <h2>Communal List</h2>
+      <span class="expand-icon">+</span>
+    </div>
+    <div class="dropdown-content" id="communal-list-dropdown">
+      <ul id="communal-list"></ul>
+      <p>Total: <span id="communal-total">0</span> items</p>
+      <button class="action-button" onclick="selectAllItems('communal')">Select All</button>
+      <button class="action-button" onclick="addToInventory('communal')">Add to Inventory</button>
+      <button class="action-button" onclick="saveAsTemplate('communal')">Save Communal Template</button>
+    </div>
+    <div class="dropdown load-templates-section" onclick="toggleDropdown('load-templates-dropdown')">
+      <h2>Load Saved Templates</h2>
+      <span class="expand-icon">+</span>
+    </div>
+    <div class="dropdown-content" id="load-templates-dropdown">
+      <select id="template-select" class="input-field">
+        <option value="">Select a template...</option>
+      </select>
+      <button class="custom-button" onclick="loadSelectedTemplate()">Load Template</button>
+      <button class="custom-button" onclick="deleteSelectedTemplate()">Delete Template</button>
+    </div>
+  </div>
+  <script src="scripts.js"></script>
+</body>
+</html>
