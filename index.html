@@ -1,16 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kitchen Kompanion</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen Kontents</title>
+    <link rel="stylesheet" href="index_styles.css">
 </head>
 
-  <body>Home Screen (Tyler)</body>
-  <br>
-  <!-- Placeholder buttons to test functionality of tabs -->
-  <a href="shopping_list.html"><button>Muhammad Tab</button></a>
-  <a href="user_profile.html"><button>Nico Tab</button></a>
-  <a href="recommendations.html"><button>Bardia Tab</button></a>  
-  
+<body>
+    <!-- Class to make the Bezel -->
+    <div class="tablet">
+            <!-- Class to set the background color -->
+        <div class="background">
+            <h1><em>Kitchen Kontents</em></h1>
+                <!-- Sets spacing guidelines -->
+            <div class="spacing">
+                <div class="content">
+                    <!-- Filters Section -->
+                    <h2>Filters: </h2>
+                    <!-- Filters Buttons -->
+                    <div class="filters"></div>
+                     <!-- Fridge Section -->
+                    <div class="fridge-container">
+                        <!-- Outer Color Section -->
+                        <div class="container-header">
+                            <h2>Fridge: </h2>
+                            <!-- Category Button -->
+                            <div class="category-filter">
+                                <div class="category-button">
+                                    <p>Category</p>
+                                    <img src="icons/OrangeChevronDown.svg">
+                                </div>
+                                <div class="dropdown-menu" id="fridge-category-menu">
+                                </div>
+                            </div>
+                            <button class="chevron-down-button"></button>
+                        </div>
+                        <!-- Actual Fridge Section Contents -->
+                        <div class="fridge-contents">
+                            <button class="plus-button"> <img src="icons/Plus.svg"> </button>
+                            <div class="scrollable-table">
+                                <table class="storage-table">
+                                    <thead>
+                                        <tr>
+                                            <th><em>Item</em></th>
+                                            <th><em>Owner</em></th>
+                                            <th><em>Status</em></th>
+                                            <th><em>Quantity</em></th>
+                                        </tr>
+                                    </thead>
+                                    <!-- Fridge Contents Table -->
+                                    <tbody id="fridge-table-body">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pantry Section -->
+                    <div class="pantry-container">
+                        <!-- Outer Color Section -->
+                        <div class="container-header">
+                            <h2>Pantry: </h2>
+                             <!-- Category Button --> 
+                            <div class="category-filter">
+                                <div class="category-button">
+                                    <p>Category</p>
+                                    <img src="icons/OrangeChevronDown.svg">
+                                </div>
+                                <div class="dropdown-menu" id="pantry-category-menu">
+                                </div>
+                            </div>
+                            <button class="chevron-down-button"></button>
+                        </div>
+                        <!-- Actual Pantry Section Contents -->
+                        <div class="pantry-contents">
+                            <button class="plus-button"> <img src="icons/Plus.svg"> </button>
+                            <div class="scrollable-table">
+                                <table class="storage-table">
+                                    <thead>
+                                        <tr>
+                                            <th><em>Item</em></th>
+                                            <th><em>Owner</em></th>
+                                            <th><em>Status</em></th>
+                                            <th><em>Quantity</em></th>
+                                        </tr>
+                                    </thead>
+                                    <!-- Pantry Contents Table -->
+                                    <tbody id="pantry-table-body">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Freezer Section -->
+                    <div class="freezer-container">
+                        <!-- Outer Color Section -->
+                        <div class="container-header">
+                            <h2>Freezer: </h2>
+                            <!-- Category Button -->
+                            <div class="category-filter">
+                                <div class="category-button">
+                                    <p>Category</p>
+                                    <img src="icons/OrangeChevronDown.svg">
+                                </div>
+                                <div class="dropdown-menu" id="freezer-category-menu">
+                                </div>
+                            </div>
+                            <button class="chevron-down-button"></button>
+                        </div>
+                        <!-- Actual Freezer Section Contents -->
+                        <div class="freezer-contents">
+                            <button class="plus-button"> <img src="icons/Plus.svg"> </button>
+                            <div class="scrollable-table">
+                                <table class="storage-table">
+                                    <thead>
+                                        <tr>
+                                            <th><em>Item</em></th>
+                                            <th><em>Owner</em></th>
+                                            <th><em>Status</em></th>
+                                            <th><em>Quantity</em></th>
+                                        </tr>
+                                    </thead>
+                                    <!-- Freezer Contents Table -->
+                                    <tbody id="freezer-table-body">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navbar -->
+                <div class="navbar">
+                    <button class="shopping-list-button">
+                        <img src="icons/List.svg" class="button-icon">
+                        <p>Shopping<br>List</p>
+                    </button>
+
+                    <button class="kontents-button">
+                        <img src="icons/Fridge-Selected.svg" class="button-icon">
+                        <p>Kontents</p>
+                    </button>
+
+                    <button class="food-suggestions-button">
+                        <img src="icons/Utensils.svg" class="button-icon">
+                        <p>Food<br>Suggestions</p>
+                    </button>
+
+                    <button class="settings-button">
+                        <img src="icons/Settings.svg" class="button-icon">
+                        <p>Settings</p>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pop Up -->
+            <div class="popup-overlay" id="popup-overlay" style="display:none;">
+                <div class="popup-form">
+                    <h1>Add Food Item</h1>
+
+                    <!-- Location Selection -->
+                    <h2>Location:</h2>
+                    <div id="location-buttons" class="popup-field"></div>
+
+                    <!-- Owner Selection -->
+                    <h2>Owner:</h2>
+                    <div id="owner-buttons" class="popup-field"></div>
+
+                    <!-- Item Name Input -->
+                    <h2>Item:</h2>
+                    <input type="text" id="item-name" oninput="showKeyboard()" onblur="hideKeyboard()" />
+
+                    <!-- Perishable Selection -->
+                    <h2>Perishable:</h2>
+                    <div id="perishable-buttons" class="popup-field">
+                        <button onclick="setPerishable(true)">Yes</button>
+                        <button onclick="setPerishable(false)">No</button>
+                    </div>
+
+                    <!-- Expiration Date Section (Pops up only if Perishable selected) -->
+                    <div id="expiration-date-field" style="display:none;">
+                        <p>Expiration Date (DD/MM/YYYY):</p>
+                        <input type="text" id="expiration-date" />
+                    </div>
+
+                    <!-- Quantity Selection -->
+                    <h2>Quantity:</h2>
+                    <div class="popup-field">
+                        <button onclick="updateQuantity(-1)">-</button>
+                        <span id="quantity-display">1</span>
+                        <button onclick="updateQuantity(1)">+</button>
+                    </div>
+
+                    <!-- Category Selection -->
+                    <div class="popup-category">
+                        <h2>Category:</h2>
+                        <div class="category-button" onclick="togglePopupCategoryMenu()">
+                            <p id="selected-category">Category</p>
+                            <img src="icons/OrangeChevronDown.svg" alt="dropdown">
+                        </div>
+                        <div class="dropdown-menu" id="popup-category-menu">
+                        </div>
+                    </div>
+
+                    <!-- Confirmation Buttons -->
+                    <div class = "confirm-buttons">
+                        <button class="accept-button" onclick="addFoodItem()">Add Item</button>
+                        <button class="cancel-button" onclick="closePopup()">Cancel</button>
+                    </div>
+                </div>
+                <img id="keyboard-image" src="icons/Keyboard.svg" alt="Keyboard Image" />
+            </div>
+        </div>
+    </div>
+
+    <script src="data_model_script.js"></script>
+</body>
+
 </html>
