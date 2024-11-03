@@ -473,13 +473,6 @@ function addFoodItem() {
     const itemName = document.getElementById("item-name").value;
     expirationDate = isPerishable ? document.getElementById("expiration-date").value : null;
 
-    /* Hints at the idea of content being not fully inputted. But, need a way have the display pop up on screen. 
-         This will be impleneted in higher fidelity prototypes. */
-    if (!itemName || !selectedLocation || !selectedOwner || !selectedCategory || (isPerishable && !expirationDate)) {
-        alert("Please fill out all required fields.");
-        return;
-    } 
-
     // Creating the new FoodItem and adding it to the selected storage type
     const newItem = new FoodItem(itemName, selectedOwner, selectedCategory, isPerishable, expirationDate, quantity, selectedLocation);
     const storage = selectedLocation === "Fridge" ? kitchen.fridge :
