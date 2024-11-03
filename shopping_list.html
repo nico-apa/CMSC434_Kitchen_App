@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shopping List Manager</title>
+  <title>Shopping Lists</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <div class="shopping-list-container" id="shopping-list-container">
+    <h1>Shopping List</h1>
     <div class="dropdown add-item-section" onclick="toggleDropdown('add-item-dropdown')">
       <h2>Add an Item</h2>
       <span class="expand-icon">+</span>
@@ -74,6 +76,26 @@
       </select>
       <button class="custom-button" onclick="loadSelectedTemplate()">Load Template</button>
       <button class="custom-button" onclick="deleteSelectedTemplate()">Delete Template</button>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+      <button class="shopping-list-button">
+        <img src="icons/List.svg" class="button-icon">
+        <p>Shopping<br>List</p>
+      </button>
+      <button class="kontents-button">
+        <img src="icons/Fridge-Selected.svg" class="button-icon">
+        <p>Kontents</p>
+      </button>
+      <button class="food-suggestions-button">
+        <img src="icons/Utensils.svg" class="button-icon">
+        <p>Food<br>Suggestions</p>
+      </button>
+      <button class="settings-button">
+        <img src="icons/Settings.svg" class="button-icon">
+        <p>Settings</p>
+      </button>
     </div>
   </div>
   <script src="scripts.js"></script>
