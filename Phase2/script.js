@@ -148,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.rectangle-32 .recipe-image').src = recipe.image;
 
         const starIcon = document.querySelector('.star-icon');
+        /* Will show filled star if a favorite recipe, otherwise unfilled star */
         starIcon.src = favRecipes.includes(recipe) ? 'icons/star-filled.svg' : 'icons/star.svg';
     }
 
@@ -156,13 +157,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const recipe = suggestedRecipes[index];
         document.getElementById('full-recipe-image').src = recipe.image;
         document.getElementById('full-recipe-title').textContent = recipe.title;
-        document.getElementById('full-recipe-needed-ingredients').textContent = `Needed Ingredients: ${recipe.neededIngredients}`;
+        document.getElementById('full-recipe-needed-ingredients').textContent = `Needed Ingredients: ${recipe.neededIngredients || ''}`;
         document.getElementById('full-recipe-cook-time').textContent = `Cook Time: ${recipe.cookTime}`;
         document.getElementById('full-recipe-short-description').textContent = recipe.shortDescription;
         document.getElementById('full-recipe-ingredients').innerHTML = recipe.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('');
         document.getElementById('full-recipe-instructions').innerHTML = recipe.instructions.map(instruction => `<li>${instruction}</li>`).join('');
         document.getElementById('full-recipe-view').style.display = 'flex';
-    }
+        }
 
     // Allows for the ++ button to show the full recipe pop up
     document.querySelector('.recipe-box-container').addEventListener('click', (event) => {
@@ -196,44 +197,44 @@ document.addEventListener('DOMContentLoaded', () => {
     function showYourRecipes() {
         const yourRecipesContainer = document.querySelector('.recipe-box-container');
         yourRecipesContainer.innerHTML = '';
-
+    
         favRecipes.forEach(recipe => {
             const recipeBox = document.createElement('div');
             recipeBox.classList.add('rectangle-35');
-
+    
             const recipeImageContainer = document.createElement('div');
             recipeImageContainer.classList.add('rectangle-58');
-
+    
             const recipeImage = document.createElement('img');
-            recipeImage.src = recipe.image;
+            recipeImage.src = recipe.image || 'default_image.png';
             recipeImage.alt = recipe.title;
             recipeImage.classList.add('image-icon');
-
+    
             const starIcon = document.createElement('img');
             starIcon.src = 'icons/star-filled.svg';
             starIcon.alt = 'Star Icon';
             starIcon.classList.add('star-icon');
             starIcon.addEventListener('click', () => favoriteRecipe(recipe));
-
+    
             recipeImageContainer.appendChild(recipeImage);
             recipeImageContainer.appendChild(starIcon);
             recipeBox.appendChild(recipeImageContainer);
-
+    
             const titleContainer = document.createElement('div');
             titleContainer.classList.add('recipe-title');
-
+    
             const recipeTitle = document.createElement('span');
             recipeTitle.textContent = recipe.title;
-
+    
             const viewIcon = document.createElement('div');
             viewIcon.classList.add('view-details-icon');
             viewIcon.textContent = "+";
             viewIcon.addEventListener('click', () => showFullRecipe(recipe));
-
+    
             titleContainer.appendChild(recipeTitle);
             titleContainer.appendChild(viewIcon);
             recipeBox.appendChild(titleContainer);
-
+    
             yourRecipesContainer.appendChild(recipeBox);
         });
     }
@@ -269,9 +270,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Suggested Recipes (includes entire list at first)
     showSuggestedRecipes(currSuggRecipes);
-});
+    
 
-// Open the Edit/Add Recipe pop-up screen
+    // Open the Edit/Add Recipe pop-up screen
 document.querySelector('.button-background .button-label').addEventListener('click', () => {
     document.getElementById('edit-add-recipe-modal').style.display = 'flex';
 });
@@ -285,3 +286,115 @@ document.getElementById('close-edit-add-recipe').addEventListener('click', () =>
 document.getElementById('cancel-recipe').addEventListener('click', () => {
     document.getElementById('edit-add-recipe-modal').style.display = 'none';
 });
+
+
+// Opens up the pop-up for the browse recipes by category 
+function openBrowseCategoryPopup() {
+    document.getElementById('browse-category-pop-up').style.display = 'flex';
+}
+
+// Browse Category Buttons
+document.querySelectorAll('.category-box').forEach(button => {
+    button.addEventListener('click', openBrowseCategoryPopup);
+});
+
+// Exit button for the "to be implemented" pop-up
+document.getElementById('close-browse-category-pop-up').addEventListener('click', () => {
+    document.getElementById('browse-category-pop-up').style.display = 'none';
+});
+
+
+// Adds recipe to your recipes section
+function addRecipe(recipe) {
+    favRecipes.push(recipe);
+    showYourRecipes();
+}
+
+// Function to show all recipes in "Your Recipes" section
+function showYourRecipes() {
+    const yourRecipesContainer = document.querySelector('.recipe-box-container');
+    yourRecipesContainer.innerHTML = '';
+
+    favRecipes.forEach(recipe => {
+        /* Container for the recipe box with image and the recipeImage container*/
+        const recipeBox = document.createElement('div');
+        recipeBox.classList.add('rectangle-35');
+
+        const recipeImageContainer = document.createElement('div');
+        recipeImageContainer.classList.add('rectangle-58');
+
+
+        /* Creates const for the recipe image and the favorite button icon*/
+        const recipeImage = document.createElement('img');
+        recipeImage.src = recipe.image;
+        recipeImage.alt = recipe.title;
+        recipeImage.classList.add('image-icon');
+
+        const starIcon = document.createElement('img');
+        starIcon.src = 'icons/star-filled.svg';
+        starIcon.alt = 'Star Icon';
+        starIcon.classList.add('star-icon');
+        starIcon.addEventListener('click', () => favoriteRecipe(recipe));
+
+
+
+        /* Adds recipe + star to the container*/
+        recipeImageContainer.appendChild(recipeImage);
+        recipeImageContainer.appendChild(starIcon);
+        recipeBox.appendChild(recipeImageContainer);
+
+
+        const titleContainer = document.createElement('div');
+        titleContainer.classList.add('recipe-title');
+
+        const recipeTitle = document.createElement('span');
+        recipeTitle.textContent = recipe.title;
+
+
+        const viewIcon = document.createElement('div');
+        viewIcon.classList.add('view-details-icon');
+        viewIcon.textContent = "+";
+        viewIcon.addEventListener('click', () => showFullRecipe(recipe));
+
+
+        titleContainer.appendChild(recipeTitle);
+        titleContainer.appendChild(viewIcon);
+        recipeBox.appendChild(titleContainer);
+
+        yourRecipesContainer.appendChild(recipeBox);
+    });
+}
+
+// Event listener for "Confirm" button in the Add Recipe form
+document.getElementById('confirm-recipe').addEventListener('click', () => {
+        // Gets input from form fields
+        const title = document.getElementById('recipe-title').value;
+        const cookTime = document.getElementById('cook-time').value;
+        const description = document.getElementById('description').value;
+        const ingredients = document.getElementById('ingredients').value.split('\n');
+        const instructions = document.getElementById('instructions').value.split('\n'); 
+
+        // Creates a new recipe
+        const newRecipe = {
+            title: title,
+            cookTime: cookTime,
+            shortDescription: description,
+            ingredients: ingredients,
+            instructions: instructions,
+            image: '' 
+        };
+
+        // Recipe will be added to the Your Recipes section
+        addRecipe(newRecipe);
+
+        // Exits the pop-up
+        document.getElementById('edit-add-recipe-modal').style.display = 'none';
+        document.getElementById('recipe-title').value = '';
+        document.getElementById('cook-time').value = '';
+        document.getElementById('description').value = '';
+        document.getElementById('ingredients').value = '';
+        document.getElementById('instructions').value = '';
+    });
+
+});
+
