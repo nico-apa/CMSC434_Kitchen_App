@@ -33,7 +33,7 @@ header {
 /* End General Style Guidelines */
 
 /* Table Bezel */
-.tablet {
+/* .tablet {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,7 +43,7 @@ header {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-}
+} */
 
 /* Background Color */
 .background {
@@ -52,8 +52,9 @@ header {
   background-color: #ffeee2;
   align-items: center;
   justify-content: flex-start;
-  width: 63vh;
-  height: 91.55vh;
+  width: 640px;
+  height: 960px;
+  margin: auto;
   border-radius: 2vh;
 }
 
