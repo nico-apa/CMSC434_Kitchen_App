@@ -1,0 +1,139 @@
+ffeee2
+8bb174
+231f20
+3f612d
+db5a42
+
+.btn {
+    display: block;
+    border-radius: 2.5rem;
+    border: 0;
+    font-family: 'TripSans';
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 5rem 0;
+    padding: 2rem 3rem;
+    white-space: nowrap;
+    width: 25rem;
+    background-color: #8bb174;
+    color: #FFEEE2;
+}
+
+.btn:hover {
+    background-color: #72985b;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+
+.log_btn_block {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Style for login and logout buttons */
+.log_buttons {
+    font-size: 1rem;
+    font-family: 'TripSans';
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #FFEEE2;
+}
+
+.login {
+    background-color: #8bb174;
+}
+
+.login:hover {
+    background-color: #70935a;
+    transition: 0.4s ease;
+}
+
+.logout {
+    background-color: #db5a42;
+}
+
+.logout:hover {
+    background-color: #b74b37;
+    transition: 0.4s ease;
+}
+
+
+/* Aligns scroll buttons to be side by side */
+.scroll_buttons {
+    display: flex;
+    justify-content: center; /* Centers the buttons horizontally */
+    align-items: center; /* Aligns the buttons vertically in the middle */
+    gap: 10px; /* Adds space between buttons */
+}
+
+/* Style for the add, remove, and scroll buttons */
+.scroll_add_remove {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #f8f4fc;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    transition: 0.4s ease;
+}
+
+.add {
+    background-color: #8bb174;
+}
+
+.remove {
+    background-color: #db5a42;
+}
+
+
+
+      <!-- Groups user profile picture and username -->
+      <div class="user_profile">
+        <div class="user_profile_picture one"></div>
+        <span class="user_name">Nico_Apa</span>
+
+        <div class="settings_block">
+          <a href="user_preferences.html"><button class="btn usr_pref"><i class="fa fa-home"></i> User Preferences</button></a>
+          <a href="fridge_view.html"><button class="btn fridge_view"><i class="fa fa-birthday-cake"></i> Fridge View</button></a>
+          <a href="user_customization.html"><button class="btn custom_settings"><i class="fa fa-paint-brush"></i> Customization</button></a>
+          <a href="user_settings.html"><button class="btn sys_settings"><i class="fa fa-bars"></i> Settings</button></a>
+        </div>  
+
+<div class="scroll_buttons">
+      <div class="scroll_add_remove left">❮</div>
+      <div class="scroll_add_remove add">+</div>
+      <div class="scroll_add_remove remove">-</div>
+      <div class="scroll_add_remove right">❯</div>
+    </div>
+
+
+        <div class="log_btn_block">
+          <Button class="log_buttons login">Login</Button> 
+          <button class="log_buttons logout">Logout</button>
+        </div>
+      </div>
+
+<h3>My Kitchens</h3>
+<pre>
+  Placeholder for a list that will allow user
+  to add and delete kitchens which will each 
+  have a fridge, freezer, and pantry section.
+  User will also have the option to name the
+  kitchens and 
+</pre>
+
+<div class="profile_settings">
+      <label>Name:</label> <input id="name_input"> 
+      <label>Biography:</label> <textarea id="Biography_input">Hey I'm (use js here to insert username)!</textarea> 
+      <label>Food Restrictions/Allergies:</label> <input id="restrictions_input">  <!-- Use multiselect here/dropdown hybrid -->
+      <label>Diet:</label> <input id="diet_input"> 
+      <label>Date of Birth:</label> <input id="dob_input">
+    </div>

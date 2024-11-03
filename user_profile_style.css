@@ -12,57 +12,67 @@ body {
     font-family: 'TripSans', sans-serif;
 }
 
+/* Visible content on site */
+.user_screen {
+    margin: auto;
+    width: 640px;
+    height: 960px;
+    background-color: #FFEEE2;
+    box-shadow: 0rem 0rem 0.625rem rgba(0, 0, 0, 0.1);
+}
+
 /* Style for header background */
 .header {
+    margin: auto;
     text-align: center;
-    font-size: 2rem;
-    background-color: #3F612D;
-    padding: 2rem;
+    font-size: 1.5rem;
+    padding: .5rem;
+    color: #231f20;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Black div background */
+.usr_bckgrd {
+    position: relative;
+    margin: auto;
+    background-color: #231f20;
+    height: 18em;
+    width: 35rem;
+    border-radius: 1rem;
+}
+
+/* Style for adjacent profile pic and user name/age div */
+.side_to_side {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 1rem;
+}
+
+.edit_btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 1rem;
+    margin-right: 1rem;
     color: #FFEEE2;
 }
 
-/* Style for login and logout buttons */
-.log_buttons {
-    font-size: 1rem;
-    font-family: 'TripSans';
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    margin: 0.25rem;
-    border-radius: 1rem;
-    border: none;
-    outline: none;
-    cursor: pointer;
+.edit_btn svg, .edit_btn img {
+    width: 21px;
+    height: 21px;
+    vertical-align: middle;
+    margin-right: 5px; /* Adds space between icon and text */
 }
 
-.login {
-    background-color: #8bb174;
-}
-
-.logout {
-    background-color: #db5a42;
-}
-
-/* Groups div columns in rows */
-.row_of_views::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-/* Organizes divs into columns */
-.column {
-    float: left;
-    width: 33.33%;
-    padding: 15px;
-  }
-  
-/* Renders profile picture to appear circular */
 .user_profile_picture {
-    display: inline-block;
-    width: 15rem;
-    height: 15rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    width: 8rem;
+    height: 8rem;
     border-radius: 50%;
-
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -72,35 +82,203 @@ body {
     background-image: url(fat_dawg.jpg);
 }
 
-/* Aligns scroll buttons to be side by side */
-.scroll_buttons {
-    display: flex;
-    justify-content: center; /* Centers the buttons horizontally */
-    align-items: center; /* Aligns the buttons vertically in the middle */
-    gap: 10px; /* Adds space between buttons */
+/* User content in black div box */ 
+.user_info {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    color: #FFEEE2;
+}
+
+/* Preference sub header */
+.pref_text {
+    font-size: 1.25rem;
+}
+
+/* Font size for user info */
+.user_personal {
+    margin-left: 1rem;
+}
+
+/* Users info style */
+.user_name, .user_age, .user_desc_text, .user_desc {
+    font-size: 1rem;
+    color: #FFEEE2;
+    padding: .25rem;
+}
+
+/* Positioning styling for inner table */
+.user_table_pref {
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+
+/* Organizes divs into columns */
+.column {
+    margin: auto;
+    padding: 1rem;
+    background-color: #FFEEE2;
+}
+
+.col_content {
+    margin: auto;
+    width: fit-content;
+}
+
+th {
+    text-align: start;
+}
+
+td {
+    color: #db5a42;
+}
+
+.user_table_pref td[contenteditable="true"] {
+    background-color: #f0f8ff; /* Light background when editable */
+    outline: 1px solid #aaa; /* Outline to show edit mode */
+}
+
+
+/* Div container for setting buttons and scroll downs */
+.scrollable_settings {
+    margin: auto;
+    width: auto;
+    max-width: 35rem;
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+    padding-bottom: 1rem;
+}
+
+.scrollable_settings::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.scrollable_settings::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+.scrollable_settings::-webkit-scrollbar-thumb {
+    background-color: #888; 
+    border-radius: 10px; 
+    border: 2px solid transparent; 
+    background-clip: padding-box; 
+}
+
+.scrollable_settings::-webkit-scrollbar-thumb:hover {
+    background-color: #555; 
+}
+
+/* Thin scrollbar width */
+.scrollable_settings {
+    scrollbar-width: thin;
+    scrollbar-color: #888 transparent; 
+}
+
+
+/* Setting buttons/dropdowns style */
+.setting_btns {
+    height: 1rem;
+    color: #FFEEE2;
+    background-color: #231f20;
+    border-radius: 1rem;
+    padding: .5rem .5rem;
+    margin-top: 1.5rem;
+}
+
+.dropdown_content {
+    display: none;
+    padding: 0.5rem;
+    background-color: #333;
+    color: #FFEEE2;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.light_btn, .dark_btn, .custom_btn, .keto_btn, .paleo_btn, .vegan_btn, .vege_btn, .dash_btn{
+    padding: 0.5rem 1rem;
+    margin: 0.25rem auto;
+    background-color: #444; /* Default background color */
+    color: #FFEEE2; /* Default text color */
+    border-radius: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    width: 80%;
+    transition: background-color 0.2s, color 0.2s; /* Smooth transition */
+}
+
+.setting_btns.expanded {
+    height: auto;
+}
+
+/* Customization text style */
+#customization {
+    margin-top: 1rem;
+    color: #231f20;
+    font-weight: bold;
+    font-size: larger;
+}
+
+/* System settings text style */
+#sys_settings {
+    margin-top: 1rem;
+    color: #231f20;
+    font-weight: bold;
+    font-size: larger;
+}
+
+/* Setting btns icon style */
+.icon {
+    float: right;
+    margin-right: .5rem;
+    color: #db5a42;
+    transition: 0.15s;
+}
+
+.icon:hover {
+    transform: scale(1.52);
+}
+
+/* Hover state */
+.btn_like:hover, .btn_select:hover{
+    background-color: #555; /* Background color on hover */
+    color: #db5a42; /* Red color on hover */
+}
+
+/* Selected state */
+.btn_like.selected, .btn_select.selected {
+    background-color: #555; /* Same background as hover */
+    color: #db5a42; /* Keeps the text red when selected */
 }
 
 /*  */
-.scroll_add_remove {
-    padding: 10px;
+.tabs {
+    display: flex;
+    background-color: #E75480;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+  
+.tab {
+    display: flex;
+    flex: 1;
+    padding: 7px;
+    flex-direction: column;
+    align-items: center;   
+    justify-content: center; 
+    text-align: center;
+    background-color: #ffbdbd;
+    color: #fff;
     cursor: pointer;
-    background-color: #f8f4fc;
-    height: 1rem;
-    width: 1rem;
-    border-radius: 50%;
-    transition: 0.4s ease;
 }
 
-.add {
-    background-color: #8bb174;
+.tab img {
+    width: 10px;  
+    height: 10px;
+    margin-bottom: 2px;  
 }
-
-.remove {
-    background-color: #db5a42;
-}
-
-.scroll_add_remove:hover {
-    box-shadow: 0rem 0rem 1.25rem 1.25rem rgba(black, black, black, black);
-    background-color: lightgray;
+  
+.tab:hover {
+    background-color: #faa5a5;
 }
 
