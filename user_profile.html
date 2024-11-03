@@ -9,159 +9,161 @@
 </head>
 
 <body>
-<div class="user_screen">
-  <div class="header">
-    <h1>Settings</h1>
-  </div>
+  <div class="user_screen">
+    <div class="header">
+      <h1>Settings</h1>
+    </div>
+    
+    <!-- Organizes user profile page by creating div sections -->
+    <div class="row_of_views">
+      <!-- Column for user profile settings, customization, and fridge view -->
+      <div class="column">
+        <!-- div box for column content -->
+        <div class="col_content">
   
-  <!-- Organizes user profile page by creating div sections -->
-  <div class="row_of_views">
-    <!-- Column for user profile settings, customization, and fridge view -->
-    <div class="column">
-      <!-- div box for column content -->
-      <div class="col_content">
-
-        <!-- Black box background -->
-        <div class="usr_bckgrd">
-
-          <div class="user_profile_picture one side_to_side"></div>
-          <!-- Block for name, age, and desc. -->
-          <div class="user_personal side_to_side">
-            <div class="user_name">Name:</div>
-            <div class="user_age">Age:</div>
-            <div class="user_desc_text">Description:</div>
-            <div class="user_desc"></div>
-          </div>  
-
-          <div class="edit_btn">
-            <img src="Edit.svg" alt="Edit Icon" class="icon" onclick="toggleEditMode()">
-          </div>
-          
-          <div class="user_info">
-            <div class="pref_text">Preferences:</div>
-            <div class="user_table_pref">
-              <table style="width:100%">
-                <tr>
-                  <th>Allergies:</th>
-                  <th>Food Preferences:</th>
-                  <th>Budget:</th>
-                </tr>
-                <tr>
-                  <td>Scrollable</td>
-                  <td>Scrollable</td>
-                  <td>Scrollable</td>
-                </tr>
-                <tr>
-                  <th>Location:</th>
-                  <th>Email:</th>
-                  <th>Phone Number:</th>
-                </tr>
-                <tr>
-                  <td>Germantown, MD</td>
-                  <td>naparic1@terpmail.umd.edu</td>
-                  <td>301-956-5769</td>
-                </tr>
-              </table>
+          <!-- Black box background -->
+          <div class="usr_bckgrd">
+  
+            <!-- Profile Picture Section -->
+            <div class="user_profile_picture one side_to_side" id="profilePicture">
+              <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="uploadImage(event)">
+            </div>
+            <!-- Block for name, age, and desc. -->
+            <div class="user_personal side_to_side" on>
+              <div class="user_name">Name: <span class="editable_user_name">First Name Last Name</span></div>
+              <div class="user_age">Age: <span class="editable_user_age">XX</span></div>
+              <div class="user_desc_text">Description: <div class="user_desc editable_user_desc">Tell us about yourself!</div></div>
+            </div>  
+  
+            <div class="edit_btn">
+              <img src="icons/Edit.svg" alt="Edit Icon" class="icon" onclick="toggleEditMode()">
             </div>
             
-
+            <div class="user_info">
+              <div class="pref_text">Preferences:</div>
+              <div class="user_table_pref">
+                <table style="width:100%">
+                  <tr>
+                    <th>Allergies:</th>
+                    <th>Food Preferences:</th>
+                    <th>Budget:</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <select class="custom-select disabled-select">
+                        <option value="" disabled selected>Select an option...</option>
+                        <option>Wheat</option>
+                        <option>Peanuts</option>
+                        <option>Milk</option>
+                        <option>Shellfish</option>
+                        <option>Soy</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="custom-select disabled-select">
+                        <option value="" disabled selected>Select an option...</option>
+                        <option>Protein</option>
+                        <option>Organic</option>
+                        <option>Low-Sugar</option>
+                        <option>Low-Calorie</option>
+                        <option>Gluten-Free</option>
+                      </select>
+                    </td>
+                    <td>$000.00</td>
+                  </tr>
+                  <tr>
+                    <th>Location:</th>
+                    <th>Email:</th>
+                    <th>Phone Number:</th>
+                  </tr>
+                  <tr>
+                    <td>City, State</td>
+                    <td>user@email.com</td>
+                    <td>XXX-XXX-XXXX</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Scrollable div block -->
+          <div class="scrollable_settings">
+  
+            <div id="customization">Customization:</div>
+            <div class="setting_btns">Theme
+              <img src="icons/Chevron_down.svg" class="icon" onclick="toggleDropdown(this)">
+              <div class="dropdown_content">
+                <div class="light_btn btn_select">Light</div>
+                <div class="dark_btn btn_select">Dark</div>
+                <div class="custom_btn btn_select">Custom</div>
+              </div>
+            </div>
+            <div class="setting_btns">Fridge View
+              <img src="icons/Chevron_down.svg" class="icon" onclick="toggleDropdown(this)">
+              <div class="dropdown_content">
+                <p>My Frigde, Tyler Fridge, Bardia Fridge, Muhammad Fridge</p>
+              </div>
+            </div>
+            <div class="setting_btns">Diet Selection
+              <img src="icons/Chevron_down.svg" class="icon" onclick="toggleDropdown(this)">
+              <div class="dropdown_content">
+                <div class="keto_btn btn_like">Keto</div>
+                <div class="paleo_btn btn_like">Paleo</div>
+                <div class="vegan_btn btn_like">Vegan</div>
+                <div class="vege_btn btn_like">Vegetarian</div>
+                <div class="dash_btn btn_like">DASH</div>
+              </div>
+            </div>
+  
+            <div id="sys_settings">System Settings:</div>
+            <div class="setting_btns">Terms of Service
+              <img src="icons/Chevron_down.svg" class="icon" onclick="toggleDropdown(this)">
+              <div class="dropdown_content">
+                <p>To Implement!</p>
+              </div>
+            </div>
+            <div class="setting_btns">Privacy Policy
+              <img src="icons/Chevron_down.svg" class="icon" onclick="toggleDropdown(this)">
+              <div class="dropdown_content">
+                <p>To Implement!</p>
+              </div>
+            </div>
+            <div class="setting_btns">About
+              <img src="icons/Chevron_down.svg" class="icon" onclick="toggleDropdown(this)">
+              <div class="dropdown_content">
+                <p>To Implement!</p>
+              </div>
+            </div>
           </div>
         </div>
-    
-        <!-- Scrollable div block -->
-        <div class="scrollable_settings">
+      </div>
+      <!-- Navbar -->
+      <div class="navbar">
+      <button class="shopping-list-button">
+          <img src="icons/List.svg" class="button-icon">
+          <div>Shopping<br>List</div>
+      </button>
 
-          <div id="customization">Customization:</div>
-          <div class="setting_btns">Theme
-            <img src="Chevron_down.svg" class="icon" onclick="toggleDropdown(this)">
-            <div class="dropdown_content">
-              <div class="light_btn btn_select">Light</div>
-              <div class="dark_btn btn_select">Dark</div>
-              <div class="custom_btn btn_select">Custom</div>
-            </div>
-          </div>
-          <div class="setting_btns">Fridge View
-            <img src="Chevron_down.svg" class="icon" onclick="toggleDropdown(this)">
-            <div class="dropdown_content">
-              <p>My Frigde, Tyler Fridge, Bardia Fridge, Muhammad Fridge</p>
-            </div>
-          </div>
-          <div class="setting_btns">Diet Selection
-            <img src="Chevron_down.svg" class="icon" onclick="toggleDropdown(this)">
-            <div class="dropdown_content">
-              <div class="keto_btn btn_like">Keto</div>
-              <div class="paleo_btn btn_like">Paleo</div>
-              <div class="vegan_btn btn_like">Vegan</div>
-              <div class="vege_btn btn_like">Vegetarian</div>
-              <div class="dash_btn btn_like">DASH</div>
-            </div>
-          </div>
+      <button class="kontents-button">
+          <img src="icons/Fridge.svg" class="button-icon">
+          <div>Kontents</div>
+      </button>
 
-          <div id="sys_settings">System Settings:</div>
-          <div class="setting_btns">Terms of Service
-            <img src="Chevron_down.svg" class="icon" onclick="toggleDropdown(this)">
-            <div class="dropdown_content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-                irure dolor in reprehenderit in voluptate velit esse cillum 
-                dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-                non proident, sunt in culpa qui officia deserunt mollit anim 
-                id est laborum.</p>
-            </div>
-          </div>
-          <div class="setting_btns">Privacy Policy
-            <img src="Chevron_down.svg" class="icon" onclick="toggleDropdown(this)">
-            <div class="dropdown_content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-                irure dolor in reprehenderit in voluptate velit esse cillum 
-                dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-                non proident, sunt in culpa qui officia deserunt mollit anim 
-                id est laborum.</p>
-            </div>
-          </div>
-          <div class="setting_btns">About
-            <img src="Chevron_down.svg" class="icon" onclick="toggleDropdown(this)">
-            <div class="dropdown_content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-                irure dolor in reprehenderit in voluptate velit esse cillum 
-                dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-                non proident, sunt in culpa qui officia deserunt mollit anim 
-                id est laborum.</p>
-            </div>
-          </div>
-        </div>
+      <button class="food-suggestions-button">
+          <img src="icons/Utensils.svg" class="button-icon">
+          <div>Food<br>Suggestions</div>
+      </button>
 
-        <!-- Footer tabs from tyler code -->
-        <div class="tabs">
-          <div class="tab" onclick="showTab('text')">
-            <img src="icons/TextIcon.svg" alt="Text Icon" > Text </div>
-          <div class="tab" onclick="showTab('choices')">
-            <img src="icons/ChoicesIcon.svg" alt="Text Icon" > Choices</div>
-          <div class="tab" onclick="showTab('todo')">
-            <img src="icons/TodoIcon.svg" alt="Text Icon" > To Do</div>
-          <div class="tab" onclick="showTab('profile')">
-            <img src="icons/UserIcon.svg" alt="Text Icon" > Profile</div>
-          <div class="tab" onclick="showTab('colors')">
-            <img src="icons/ColorLogo.svg" alt="Text Icon" > Colors</div>
-          <div class="tab" onclick="showTab('lr')">
-            <img src="icons/ArrowLogo.svg" alt="Text Icon" > LR</div>
-        </div>
-
+      <button class="settings-button">
+          <img src="icons/Settings-selected.svg" class="button-icon">
+          <div>Settings</div>
+      </button>
       </div>
     </div>
   </div>
-  
 </div>
-<script src="user_profile_script.js"></script>
 
+<script src="user_profile_script.js"></script>
 
 </body>
 </html>
