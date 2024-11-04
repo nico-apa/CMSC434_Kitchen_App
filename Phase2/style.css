@@ -6,6 +6,7 @@
   --dark-green: #3F612D;
   --orange: #DB5A42;
   --gold: #FFD700;
+  --white: #FFFFFF;
 
   --font-large: 2.8125rem; /* 45 px - large */
   --font-medium: 1.5rem; /* 24 px - medium */
@@ -60,6 +61,7 @@ body,html {
   font-style: italic;
   font-size: var(--font-large);
   color: var(--black);
+  font-weight: bold;
 }
 
 
@@ -84,7 +86,7 @@ body,html {
 /* Small Button Text */
 .button-label {
 font-family: 'Trip-Sans', sans-serif;
-font-size: 0.9375rem;
+font-size: 0.75rem;
 color: #F3F8F2;
 }
 
@@ -100,6 +102,7 @@ color: #F3F8F2;
   font-size: var(--font-medium);
   margin-top: 1rem;
   text-align: left;
+  font-weight: bold;
 
   color: var(--black);
 }
@@ -147,7 +150,7 @@ color: #F3F8F2;
   align-items: center;
   justify-content: center;
   
-  color: var(--black);
+  color: var(--white);
 
   position: absolute;
   bottom: -20px;
@@ -180,7 +183,7 @@ color: #F3F8F2;
   justify-content: center;
 }
 
-/* Ellipse 15 */
+
 .left-button-background, .right-button-background {
   width: 1.5rem;
   height: 1.5rem;
@@ -205,6 +208,8 @@ color: #F3F8F2;
   color: var(--black);
   margin-top: 2rem;
   margin-bottom: 1rem;
+
+  font-weight: bold;
 }
 
 
@@ -218,7 +223,7 @@ color: #F3F8F2;
 
 .recipe-title {
   font-size: var(--font-small);
-  color: var(--black);
+  color: var(--white);
   text-align: center;
   padding: 0.5rem;
 
@@ -270,14 +275,16 @@ color: #F3F8F2;
   color: var(--black);
 
   text-align: left;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
+
+  font-weight: bold;
 }
 
 
 .category-box {
-  margin-top: 2rem;
-  height: 4vh;
-  padding: 0.5rem;
+  margin-top: 1rem;
+  height: 3vh;
+  padding: 0.3rem;
 
   text-align: center;
 
@@ -300,7 +307,7 @@ color: #F3F8F2;
 }
 
 
-.full-recipe-modal {
+.full-recipe-popup {
   position: fixed;
   top: 0;
   left: 0;
@@ -380,6 +387,10 @@ color: #F3F8F2;
   text-align: center;
   border-radius: 50%;
   cursor: pointer;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  
 }
 
 .view-details-icon::before {
@@ -388,7 +399,7 @@ color: #F3F8F2;
 }
 
 
-.modal {
+.popup {
   position: fixed;
   top: 0;
   left: 0;
@@ -401,7 +412,7 @@ color: #F3F8F2;
   z-index: 1000;
 }
 
-.modal-content {
+.popup-content {
   background-color: var(--eggshell);
   padding: 2rem;
   border-radius: 1rem;
@@ -609,3 +620,22 @@ textarea {
 }
 
 /* End Navbar Style */
+
+/* Add Ingredients to Shopping List button style */
+.add-slist {
+  background-color: var(--dark-green);
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.add-slist:hover {
+  background-color: var(--light-green);
+}

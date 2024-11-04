@@ -13,8 +13,8 @@
             <div class="button-wrapper">
                 <div class="button-background">
                     <span class="button-label">
-                    Edit Recipes
-                    <img src="icons/edit-icon.svg" alt="Edit Icon" class="button-icon" />
+                    Add Recipe
+                    <img src="icons/plus-icon.svg" alt="Plus Icon" class="button-icon" />
                     </span>
                 </div>
             </div>
@@ -25,8 +25,8 @@
             <div class="button-wrapper">
                 <div class="button-background">
                     <span class="button-label">
-                        Add Recipe
-                        <img src="icons/plus-icon.svg" alt="Plus Icon" class="button-icon" />
+                        Edit Recipes
+                        <img src="icons/edit-icon.svg" alt="Edit Icon" class="button-icon" />
                     </span>
                 </div>
             </div>
@@ -51,7 +51,7 @@
             </div>
             <div class="rectangle-62">
                 <div class="recipe-title">Item Title</div>
-                <div class="recipe-description">Short description about dish, main ingredients, cook time, etc.</div>
+                <div class="recipe-description">Short description about dish</div>
             </div> 
 
             <div class="right-button">
@@ -107,7 +107,7 @@
     </div>
 
      <!-- Full Recipe View Pop-up -->
-     <div id="full-recipe-view" class="full-recipe-modal" style="display: none;">
+     <div id="full-recipe-view" class="full-recipe-popup" style="display: none;">
         <div class="full-recipe-content">
             <!-- Close button in the top-right of recipe -->
             <button id="close-full-recipe-button" class="close-button">X</button>
@@ -129,6 +129,8 @@
 
                 <h3>Instructions:</h3>
                 <ol id="full-recipe-instructions"></ol>
+
+                <button id="add-slist" class="add-slist">Add Ingredients to Shopping List</button>
             </div>
 
             <!-- Arrow buttons to iterate through recipes -->
@@ -141,10 +143,10 @@
 
 
         <!-- Edit/Add Recipe View Pop-up -->
-    <div id="edit-add-recipe-modal" class="modal" style="display: none;">
-        <div class="modal-content">
+    <div id="add-recipe-popup" class="popup" style="display: none;">
+        <div class="popup-content">
             <button id="close-edit-add-recipe" class="close-button">X</button>
-            <h2>Edit/Add Recipes</h2>
+            <h2>Add Recipe</h2>
             
             <div class="recipe-form">
                 <div class="image-section">
@@ -185,8 +187,8 @@
     </div>
 
         <!-- Browse Recipes by Categories Pop-up -->
-    <div id="browse-category-pop-up" class="modal" style="display: none;">
-        <div class="modal-content">
+    <div id="browse-category-pop-up" class="popup" style="display: none;">
+        <div class="popup-content">
             <button id="close-browse-category-pop-up" class="close-button">X</button>
             <h2>To be implemented...</h2>
             <p>This feature will be implemented in the future!</p>
