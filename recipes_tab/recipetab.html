@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
+    <title>Kitchen Kompanion - Recommendations Tab</title>
+</head>
+<body>
+    <div class="site-container">
+    <!-- Tab Header with Buttons (Edit and Add Recipe) -->
+        <div class="header-container">
+            <div class="button-wrapper">
+                <div class="button-background">
+                    <span class="button-label">
+                    Add Recipe
+                    <img src="icons/plus-icon.svg" alt="Plus Icon" class="button-icon" />
+                    </span>
+                </div>
+            </div>
+            <div class="tab-header">
+                Recipes
+            </div>
+
+            <div class="button-wrapper">
+                <div class="button-background">
+                    <span class="button-label">
+                        Edit Recipes
+                        <img src="icons/edit-icon.svg" alt="Edit Icon" class="button-icon" />
+                    </span>
+                </div>
+            </div>
+        </div>
+            
+
+        <!-- Suggested Recipes Section (Text)-->
+        <div class="suggested-recipes">
+            Suggested Recipes:
+        </div>
+
+        <div class="suggested-recipe-container">
+            <div class="left-button">
+                <div class="left-button-background">
+                    <img src="icons/chevron-left.svg" alt="Left Chevron" class="left-button" /> 
+                </div>
+            </div>
+            <!-- Suggested Recipes Section (Recipe Images) -->
+            <div class="rectangle-32">
+                <img src="" alt="Recipe Image" class="recipe-image">
+                <img src="icons/star.svg" alt="Star Icon" class="star-icon">
+            </div>
+            <div class="rectangle-62">
+                <div class="recipe-title">Item Title</div>
+                <div class="recipe-description">Short description about dish</div>
+            </div> 
+
+            <div class="right-button">
+                <div class="right-button-background">
+                    <img src="icons/chevron-right.svg" alt="Right Chevron" class="right-button" />
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Your Recipes Section (Text)-->
+        <div class="your-recipes">
+            Your Recipes:
+        </div>
+        
+        
+        <!-- Container for Your Recipes -->
+        <div class="recipe-box-container">
+            
+        
+    </div>
+
+    <div class="category-section">Browse Recipes by Category:</div>
+    <div class="category-container">
+        <!-- Category Section-->
+         <div class="category-box">Diets</div>
+         <div class="category-box">Preferences</div>
+         <div class="category-box">Allergies</div>
+    </div>
+
+      <!-- Navbar -->
+      <div class="navbar">
+        <a href="../shopping_list_tab/shopping_list.html" class="shopping-list-button">
+            <img src="icons/List.svg" class="navbar-button">
+            <p>Shopping<br>List</p>
+        </a>
+
+        <a href="../index.html" class="kontents-button">
+            <img src="icons/Fridge-selected.svg" class="navbar-button">
+            <p>Kontents</p>
+        </a>
+
+        <button class="food-suggestions-button">
+            <img src="icons/utensils-selected.svg" class="navbar-button">
+            <p>Recipes</p>
+        </button>
+
+        <a href="../settings_tab/user_profile.html" class="settings-button">
+            <img src="icons/Settings.svg" class="navbar-button">
+            <p>Settings</p>
+        </a>
+    </div>
+
+     <!-- Full Recipe View Pop-up -->
+     <div id="full-recipe-view" class="full-recipe-popup" style="display: none;">
+        <div class="full-recipe-content">
+            <!-- Close button in the top-right of recipe -->
+            <button id="close-full-recipe-button" class="close-button">X</button>
+            
+            <!-- Recipe Image -->
+            <div class="full-recipe-image">
+                <img src="" alt="Recipe Image" id="full-recipe-image">
+            </div>
+
+            <!-- Recipe Details -->
+            <div class="full-recipe-details">
+                <h2 id="full-recipe-title">Recipe Title</h2>
+                <p id="full-recipe-needed-ingredients">Needed Ingredients: </p>
+                <p id="full-recipe-cook-time">Cook Time: </p>
+                <p id="full-recipe-short-description">Short description...</p>
+
+                <h3>Ingredients:</h3>
+                <ul id="full-recipe-ingredients"></ul>
+
+                <h3>Instructions:</h3>
+                <ol id="full-recipe-instructions"></ol>
+
+                <button id="add-slist" class="add-slist">Add Ingredients to Shopping List</button>
+            </div>
+
+            <!-- Arrow buttons to iterate through recipes -->
+            <div class="recipe-navigation">
+                <button id="full-recipe-prev" class="nav-button">◀</button>
+                <button id="full-recipe-next" class="nav-button">▶</button>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- Edit/Add Recipe View Pop-up -->
+    <div id="add-recipe-popup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <button id="close-edit-add-recipe" class="close-button">X</button>
+            <h2>Add Recipe</h2>
+            
+            <div class="recipe-form">
+                <div class="image-section">
+                    <button class="add-image-button">Add Image</button>
+                </div>
+                
+                <div class="form-group">
+                    <label for="recipe-title">Recipe Title:</label>
+                    <input type="text" id="recipe-title" placeholder="Fill In...">
+                </div>
+                
+                <div class="form-group">
+                    <label for="cook-time">Cook Time:</label>
+                    <input type="text" id="cook-time" placeholder="Enter time (e.g., '15 minutes')">
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" placeholder="Fill In Description..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ingredients">Ingredients:</label>
+                    <textarea id="ingredients" placeholder="Enter each ingredient on a new line..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="instructions">Instructions:</label>
+                    <textarea id="instructions" placeholder="Fill In Description..."></textarea>
+                </div>
+                
+                <div class="button-group">
+                    <button id="confirm-recipe" class="confirm-button">Confirm</button>
+                    <button id="cancel-recipe" class="cancel-button">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Browse Recipes by Categories Pop-up -->
+    <div id="browse-category-pop-up" class="popup" style="display: none;">
+        <div class="popup-content">
+            <button id="close-browse-category-pop-up" class="close-button">X</button>
+            <h2>To be implemented...</h2>
+            <p>This feature will be implemented in the future!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to external JavaScript file -->
+</body>
+</html>

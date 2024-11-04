@@ -1,0 +1,386 @@
+@font-face { 
+    font-family: 'TripSans';
+    src: url(trip-sans-variable.ttf) format('truetype');
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'TripSans', sans-serif;
+  color: #231F20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  border-radius: 2vh;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+p {
+  font-size: 15px;
+  margin: 0;
+}
+
+a {
+  color: #231F20;
+  text-decoration: none;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.shopping-list-container {
+  width: 640px;
+  height: 960px;
+  background-color: #FFEEE2;
+  border-radius: 2vh;
+  box-shadow: 0rem 0rem 0.625rem rgba(0, 0, 0, 0.1);
+}
+
+.dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.dropdown h2 {
+  font-family: 'TripSans', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: italic;
+  color: #231F20;
+  margin: 0;
+}
+
+.expand-icon {
+  font-size: 1.5rem;
+  color: #DB5A42;
+}
+
+.add-item-section {
+  background-color: #231F20;
+  padding: 10px;
+  border-radius: 10px;
+  color: #FFEEE2;
+}
+
+.add-item-section h2 {
+  font-family: 'TripSans', sans-serif;
+  color: #FFEEE2;
+}
+
+.add-item-section .dropdown-content {
+  background-color: #F7F4F3;
+  color: #231F20;
+  border: 2px solid #231F20;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.personal-list-section {
+  background-color: #8BB174;
+  padding: 10px;
+  border-radius: 10px;
+  color: #FFEEE2;
+}
+
+.communal-list-section {
+  background-color: #0077A0;
+  padding: 10px;
+  border-radius: 10px;
+  color: #FFEEE2;
+}
+
+.dropdown-content {
+  display: none;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  font-family: 'TripSans', sans-serif;
+  width: 80px;
+  font-weight: bold;
+  font-style: italic;
+  color: #231F20;
+}
+
+.option-button,
+.add-item-button,
+.action-button,
+.remove-button {
+  font-family: 'TripSans', sans-serif;
+  background-color: #231F20;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.option-button.selected,
+.action-button.selected,
+.remove-button.selected {
+  background-color: #DB5A42;
+}
+
+.option-button:hover,
+.add-item-button:hover,
+.action-button:hover,
+.remove-button:hover {
+  background-color: #DB5A42;
+}
+
+#personal-list li, #communal-list li {
+  font-family: 'TripSans', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 5px;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #ddd; 
+  gap: 10px; 
+}
+
+.item-checkbox {
+  margin-right: 10px;
+}
+
+.item-name {
+  font-family: 'TripSans', sans-serif;
+  flex: 2;
+  font-weight: bold;
+  color: #231F20;
+  margin-right: 15px;
+}
+
+.item-quantity,
+.item-type {
+  font-family: 'TripSans', sans-serif;
+  flex: 1;
+  color: #555;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  background-color: #CDDDDD; 
+  border-radius: 5px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.remove-button {
+  background-color: #DB5A42;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+  background-color: #C14D36;
+}
+
+.quantity-group {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #DB5A42;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quantity-button:hover {
+  background-color: #C14D36;
+}
+
+.quantity-display {
+  font-family: 'TripSans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #231F20;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #FFEEE2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-field {
+  font-family: 'TripSans', sans-serif;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: 1px solid #231F20;
+  width: 100%;
+}
+
+.custom-button {
+  font-family: 'TripSans', sans-serif;
+  background-color: #231F20; 
+  color: #FFF;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.custom-button.selected {
+  background-color: #DB5A42; 
+}
+
+.load-templates-section {
+  font-family: 'TripSans', sans-serif;
+  background-color: #FFC107; 
+  padding: 10px;
+  border-radius: 10px;
+  color: #231F20;
+}
+
+.navbar {
+    position: absolute;
+    bottom: 5%;
+    width: 640px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #D9D9D9;
+    border-bottom-left-radius: 2vh;
+    border-bottom-right-radius: 2vh;
+    border-top: 2px solid #DB5A42;    
+}
+
+.button-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+.shopping-list-button {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    border-bottom-left-radius: 2vh;
+    cursor: pointer;
+}
+  
+.shopping-list-button:hover {
+    border-bottom-left-radius: 2vh;
+    background-color: #BBBBBB;
+}
+
+#list-coloring {
+  color: #DB5A42;
+}
+
+.shopping-list-button {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    background-color: #BBBBBB;
+    cursor: pointer;
+}
+  
+.shopping-list-button:hover {
+    background-color: #BBBBBB;
+}
+
+.kontents-button {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.kontents-button:hover {
+    background-color: #BBBBBB;
+}
+
+.food-suggestions-button {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+  
+.food-suggestions-button:hover {
+    background-color: #BBBBBB;
+}
+
+.settings-button {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border-bottom-right-radius: 2vh;
+}
+  
+.settings-button:hover {
+    background-color: #BBBBBB;
+}

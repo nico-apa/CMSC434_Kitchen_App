@@ -25,15 +25,15 @@ const FoodCategory = Object.freeze({
 const fridgeCategories = [
     FoodCategory.EGGS, FoodCategory.CONDIMENTS, FoodCategory.LEFTOVERS, FoodCategory.MEAT,
     FoodCategory.BEVERAGES, FoodCategory.FISH, FoodCategory.DAIRY, FoodCategory.VEGETABLES,
-    FoodCategory.FRUITS, FoodCategory.ALCOHOL, FoodCategory.MISC
+    FoodCategory.FRUITS, FoodCategory.ALCOHOL, FoodCategory.MISC, FoodCategory.FIXME,
 ];
 const pantryCategories = [
     FoodCategory.BAKINGGOODS, FoodCategory.SNACKS, FoodCategory.CEREALS, FoodCategory.TEAS,
-    FoodCategory.COFFEE, FoodCategory.CANNEDGOODS, FoodCategory.MISC
+    FoodCategory.COFFEE, FoodCategory.CANNEDGOODS, FoodCategory.MISC, FoodCategory.FIXME,
 ];
 const freezerCategories = [
     FoodCategory.MEAT, FoodCategory.FISH, FoodCategory.VEGETABLES, FoodCategory.FRUITS,
-    FoodCategory.ALCOHOL, FoodCategory.MISC
+    FoodCategory.ALCOHOL, FoodCategory.MISC, FoodCategory.FIXME,
 ];
 
 /* StorageType is effectively an enum that represents the different cases for storage. */
@@ -472,13 +472,6 @@ function updateQuantity(change) {
 function addFoodItem() {
     const itemName = document.getElementById("item-name").value;
     expirationDate = isPerishable ? document.getElementById("expiration-date").value : null;
-
-    /* Hints at the idea of content being not fully inputted. But, need a way have the display pop up on screen. 
-         This will be impleneted in higher fidelity prototypes. */
-    if (!itemName || !selectedLocation || !selectedOwner || !selectedCategory || (isPerishable && !expirationDate)) {
-        alert("Please fill out all required fields.");
-        return;
-    } 
 
     // Creating the new FoodItem and adding it to the selected storage type
     const newItem = new FoodItem(itemName, selectedOwner, selectedCategory, isPerishable, expirationDate, quantity, selectedLocation);

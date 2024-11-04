@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link rel="stylesheet" href="user_profile_style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="user_screen">
+    <div class="header">
+      <h1><em>Settings</em></h1>
+    </div>
+    
+    <!-- Organizes user profile page by creating div sections -->
+    <div class="row_of_views">
+      <!-- Column for user profile settings, customization, and fridge view -->
+      <div class="column">
+        <!-- div box for column content -->
+        <div class="col_content">
+  
+          <!-- Black box background -->
+          <div class="usr_bckgrd">
+  
+            <!-- Profile Picture Section -->
+            <div class="user_profile_picture one side_to_side" id="profilePicture">
+              <!-- Element to handle new profile picture to be updated -->
+              <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="uploadImage(event)">
+            </div>
+            <!-- Block for name, age, and desc. -->
+            <div class="user_personal side_to_side" on>
+              <div class="user_name">Name: <span class="editable_user_name">First Name Last Name</span></div>
+              <div class="user_age">Age: <span class="editable_user_age">XX</span></div>
+              <div class="user_desc_text">Description: <div class="user_desc editable_user_desc">Tell us about yourself!</div></div>
+            </div>  
+  
+            <div class="edit_btn">
+              <img src="icons/Edit.svg" alt="Edit Icon" class="icon" onclick="toggleEditMode()" onclick="showKeyboard()">
+            </div>
+            
+            <div class="user_info">
+              <div class="pref_text">Preferences:</div>
+              <div class="user_table_pref">
+                <table style="width:100%">
+                  <tr>
+                    <th>Allergies:</th>
+                    <th>Food Preferences:</th>
+                    <th>Budget:</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <select class="custom-select disabled-select">
+                        <option value="" disabled selected>Select an option...</option>
+                        <option>Wheat</option>
+                        <option>Peanuts</option>
+                        <option>Milk</option>
+                        <option>Shellfish</option>
+                        <option>Soy</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="custom-select disabled-select">
+                        <option value="" disabled selected>Select an option...</option>
+                        <option>Protein</option>
+                        <option>Organic</option>
+                        <option>Low-Sugar</option>
+                        <option>Low-Calorie</option>
+                        <option>Gluten-Free</option>
+                      </select>
+                    </td>
+                    <td>$000.00</td>
+                  </tr>
+                  <tr>
+                    <th>Location:</th>
+                    <th>Email:</th>
+                    <th>Phone Number:</th>
+                  </tr>
+                  <tr>
+                    <td>City, State</td>
+                    <td>user@email.com</td>
+                    <td>XXX-XXX-XXXX</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Scrollable div block -->
+          <div class="scrollable_settings">
+  
+            <div id="customization">Customization:</div>
+            <div class="setting_btns">Theme
+              <img src="icons/Chevron_down.svg" class="icon" onclick="toggleDropdown(this)">
+              <div class="dropdown_content">
+                <div class="light_btn theme_select">Light</div>
+                <div class="dark_btn theme_select">Dark</div>
+                <div class="custom_btn theme_select">Custom</div>
+              </div>
+            </div>
+            <div class="setting_btns">Fridge View
+              <img src="icons/Chevron_down.svg" class="icon" onclick="toggleDropdown(this)">
+              <div class="dropdown_content">
+                <p>To Implement!</p>
+              </div>
+            </div>
+            <div class="setting_btns">Diet Selection
+              <img src="icons/Chevron_down.svg" class="icon" onclick="toggleDropdown(this)">
+              <div class="dropdown_content">
+                <div class="keto_btn diet_options">Keto</div>
+                <div class="paleo_btn diet_options">Paleo</div>
+                <div class="vegan_btn diet_options">Vegan</div>
+                <div class="vege_btn diet_options">Vegetarian</div>
+                <div class="dash_btn diet_options">DASH</div>
+              </div>
+            </div>
+  
+            <div id="sys_settings">System Settings:</div>
+            <div class="setting_btns">Terms of Service
+              <img src="icons/Chevron_down.svg" class="icon" onclick="toggleDropdown(this)">
+              <div class="dropdown_content">
+                <p>To Implement!</p>
+              </div>
+            </div>
+            <div class="setting_btns">Privacy Policy
+              <img src="icons/Chevron_down.svg" class="icon" onclick="toggleDropdown(this)">
+              <div class="dropdown_content">
+                <p>To Implement!</p>
+              </div>
+            </div>
+            <div class="setting_btns">About
+              <img src="icons/Chevron_down.svg" class="icon" onclick="toggleDropdown(this)">
+              <div class="dropdown_content">
+                <p>To Implement!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Navbar -->
+      <div class="navbar">
+      <a href="../shopping_list_tab/shopping_list.html" class="shopping-list-button">
+          <img src="icons/List.svg" class="button-icon">
+          <p>Shopping<br>List</p>
+      </a>
+
+      <a href="../index.html" class="kontents-button">
+          <img src="icons/Fridge.svg" class="button-icon">
+          <p>Kontents</p>
+      </a>
+
+      <a href="../recipes_tab/recipetab.html" class="food-suggestions-button">
+          <img src="icons/Utensils.svg" class="button-icon">
+          <p>Recipes</p>
+      </a>
+
+      <button class="settings-button">
+          <img src="icons/Settings-selected.svg" class="button-icon">
+          <p>Settings</p>
+      </button>
+      </div>
+      <img id="keyboard-image" src="icons/Keyboard.svg" alt="Keyboard Image" />
+    </div>
+  </div>
+</div>
+
+<script src="user_profile_script.js"></script>
+
+</body>
+</html>

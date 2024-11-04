@@ -1,7 +1,16 @@
 /* General Style Guidelines */
 @font-face {
   font-family: 'TripSans';
-  src: url(trip-sans-variable.ttf), format('truetype');
+  src: url(assets/trip-sans-variable.ttf), format('truetype');
+}
+
+body {
+  font-family: 'TripSans';
+}
+
+a {
+  color: #231F20;
+  text-decoration: none;
 }
 
 h1 {
@@ -33,7 +42,7 @@ header {
 /* End General Style Guidelines */
 
 /* Table Bezel */
-.tablet {
+/* .tablet {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,7 +52,7 @@ header {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-}
+} */
 
 /* Background Color */
 .background {
@@ -52,9 +61,11 @@ header {
   background-color: #ffeee2;
   align-items: center;
   justify-content: flex-start;
-  width: 63vh;
-  height: 91.55vh;
+  width: 640px;
+  height: 960px;
+  margin: auto;
   border-radius: 2vh;
+  box-shadow: 0rem 0rem 0.625rem rgba(0, 0, 0, 0.1);
 }
 
 /* Container for the Main Content */
@@ -444,8 +455,8 @@ header {
   display: flex;
   flex-direction: column;
   position: fixed;
-  width: 64vh;
-  height: 93vh;
+  width: 640px;
+  height: 960px;
   border-radius: 2vh;
   background: rgba(0, 0, 0, 0.5);
   justify-content: center;
@@ -590,6 +601,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   justify-content: center;
   background-color: transparent;
   border: none;
@@ -618,6 +630,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   justify-content: center;
   background-color: transparent;
   border: none;
